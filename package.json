@@ -19,7 +19,8 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "playground": "npm run dev --prefix playground"
   },
   "peerDependencies": {
     "framer-motion": ">=10",
