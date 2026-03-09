@@ -8,7 +8,6 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@strange-huge/icons": "file:..",
     "framer-motion": "^11.0.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"

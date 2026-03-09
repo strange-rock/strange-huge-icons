@@ -1,5 +1,5 @@
 {
   "buildCommand": "cd playground && npm install && npm run build",
   "outputDirectory": "playground/dist",
-  "installCommand": "echo 'skip root install'"
+  "installCommand": "echo 'skip'"
 }
