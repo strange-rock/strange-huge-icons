@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { IconProps } from "@strange-huge/icons";
+import { toLabel } from "../lib/iconMeta";
 
 interface IconCardProps {
   name: string;
@@ -31,12 +32,6 @@ export function IconCard({ name, Component, color, size, onSelect }: IconCardPro
   );
 }
 
-function toLabel(name: string) {
-  return name
-    .replace(/Icon$/, "")
-    .replace(/([A-Z])/g, " $1")
-    .trim();
-}
 
 const styles: Record<string, React.CSSProperties> = {
   card: {

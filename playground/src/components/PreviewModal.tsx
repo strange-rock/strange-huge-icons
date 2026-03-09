@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { IconProps } from "@strange-huge/icons";
+import { FIGMA_NAMES, VARIANTS, toLabel } from "../lib/iconMeta";
 
 interface PreviewModalProps {
   name: string;
@@ -9,18 +10,12 @@ interface PreviewModalProps {
   onClose: () => void;
 }
 
-// Per-icon variant registry
-const VARIANTS: Record<string, string[]> = {
-  SidebarLeftIcon:  ["close", "open"],
-  SidebarRightIcon: ["close", "open"],
-};
-
 export function PreviewModal({ name, Component, color, onClose }: PreviewModalProps) {
   const variants = VARIANTS[name] ?? [];
   const hasVariants = variants.length > 0;
 
   const [previewSize, setPreviewSize] = useState(64);
-  const [animated, setAnimated]       = useState(false);
+  const [animated, setAnimated]       = useState(true);
   const [triggered, setTriggered]     = useState(false);
   const [useTrigger, setUseTrigger]   = useState(false);
   const [variant, setVariant]         = useState(variants[0] ?? "");
@@ -61,9 +56,14 @@ export function PreviewModal({ name, Component, color, onClose }: PreviewModalPr
         >
           {/* ── Header ── */}
           <div style={s.header}>
-            <div>
+            <div style={s.headerMeta}>
               <p style={s.iconLabel}>{label}</p>
-              <p style={s.iconExport}>{name}</p>
+              <div style={s.namePills}>
+                {FIGMA_NAMES[name]
+                  ? <span style={s.pillFigma}>{FIGMA_NAMES[name]}</span>
+                  : <span style={s.pillCode}>{name}</span>
+                }
+              </div>
             </div>
             <button style={s.closeBtn} onClick={onClose}>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -190,9 +190,6 @@ function Select({ value, options, onChange }: { value: string; options: string[]
   );
 }
 
-function toLabel(name: string) {
-  return name.replace(/Icon$/, "").replace(/([A-Z])/g, " $1").trim();
-}
 
 // ── Styles ──
 
@@ -215,8 +212,20 @@ const s: Record<string, React.CSSProperties> = {
     display: "flex", alignItems: "flex-start", justifyContent: "space-between",
     padding: "18px 20px 16px",
   },
-  iconLabel: { fontSize: 15, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em", marginBottom: 3 },
-  iconExport: { fontSize: 11, color: "#3a3a3a", fontFamily: "monospace" },
+  iconLabel: { fontSize: 15, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em", marginBottom: 6 },
+  headerMeta: { display: "flex", flexDirection: "column", gap: 0 },
+  namePills: { display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" as const },
+  pillCode: {
+    fontSize: 10, fontFamily: "monospace", color: "#666",
+    background: "#0f0f0f", border: "1px solid #222",
+    borderRadius: 4, padding: "2px 6px",
+  },
+  pillFigma: {
+    fontSize: 10, fontFamily: "monospace", color: "#444",
+    background: "#0f0f0f", border: "1px solid #1a1a1a",
+    borderRadius: 4, padding: "2px 6px",
+    display: "flex", alignItems: "center", gap: 4,
+  },
   closeBtn: {
     width: 26, height: 26, background: "transparent", border: "none",
     borderRadius: 6, cursor: "pointer",
