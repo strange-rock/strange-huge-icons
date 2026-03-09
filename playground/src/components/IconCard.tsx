@@ -6,18 +6,12 @@ interface IconCardProps {
   Component: React.ComponentType<IconProps>;
   color: string;
   size: number;
+  onSelect: () => void;
 }
 
-export function IconCard({ name, Component, color, size }: IconCardProps) {
+export function IconCard({ name, Component, color, size, onSelect }: IconCardProps) {
   const [hovered, setHovered] = useState(false);
-  const [animate, setAnimate] = useState(false);
-
   const label = toLabel(name);
-
-  function handleClick() {
-    setAnimate(true);
-    setTimeout(() => setAnimate(false), 800);
-  }
 
   return (
     <div
@@ -27,14 +21,10 @@ export function IconCard({ name, Component, color, size }: IconCardProps) {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={handleClick}
+      onClick={onSelect}
     >
       <div style={styles.iconWrap}>
-        <Component
-          size={size}
-          color={color}
-          animate={animate}
-        />
+        <Component size={size} color={color} />
       </div>
       <span style={styles.label}>{label}</span>
     </div>
