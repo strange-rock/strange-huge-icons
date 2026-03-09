@@ -9,17 +9,37 @@ interface PreviewModalProps {
   onClose: () => void;
 }
 
+// Per-icon variant registry
+const VARIANTS: Record<string, string[]> = {
+  SidebarLeftIcon:  ["close", "open"],
+  SidebarRightIcon: ["close", "open"],
+};
+
 export function PreviewModal({ name, Component, color, onClose }: PreviewModalProps) {
+  const variants = VARIANTS[name] ?? [];
+  const hasVariants = variants.length > 0;
+
   const [previewSize, setPreviewSize] = useState(64);
+  const [animated, setAnimated]       = useState(false);
+  const [triggered, setTriggered]     = useState(false);
+  const [useTrigger, setUseTrigger]   = useState(false);
+  const [variant, setVariant]         = useState(variants[0] ?? "");
+
   const label = toLabel(name);
 
   useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
+    function onKey(e: KeyboardEvent) { if (e.key === "Escape") onClose(); }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
+
+  // Build the code snippet
+  const codeProps = [
+    hasVariants         ? `variant="${variant}"` : null,
+    animated            ? `animated`             : null,
+    useTrigger          ? `triggered={${triggered}}` : null,
+  ].filter(Boolean).join(" ");
+  const codeSnippet = `<${name}${codeProps ? " " + codeProps : ""} />`;
 
   return (
     <AnimatePresence>
@@ -45,58 +65,76 @@ export function PreviewModal({ name, Component, color, onClose }: PreviewModalPr
               <p style={s.iconLabel}>{label}</p>
               <p style={s.iconExport}>{name}</p>
             </div>
-            <button style={s.closeBtn} onClick={onClose} aria-label="Close">
+            <button style={s.closeBtn} onClick={onClose}>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M1 1L11 11M11 1L1 11" stroke="#555" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </button>
           </div>
 
-          {/* ── Divider ── */}
           <div style={s.rule} />
 
-          {/* ── Variants section ── */}
-          <div style={s.section}>
-            <p style={s.sectionLabel}>VARIANTS</p>
-            <div style={s.variantRow}>
-              <VariantCard
-                Component={Component}
-                color={color}
-                size={previewSize}
-                variant="slide-out"
-                label="Slide Out"
-                description='hover → slides out left'
-                codeProp={`variant="slide-out"`}
-              />
-              <VariantCard
-                Component={Component}
-                color={color}
-                size={previewSize}
-                variant="slide-in"
-                label="Slide In"
-                description='hover → slides in from left'
-                codeProp={`variant="slide-in"`}
-              />
-            </div>
+          {/* ── Preview stage ── */}
+          <div style={s.stage}>
+            <Component
+              size={previewSize}
+              color={color}
+              animated={animated}
+              triggered={useTrigger ? triggered : undefined}
+              variant={variant || undefined}
+            />
           </div>
 
-          {/* ── Divider ── */}
           <div style={s.rule} />
 
-          {/* ── Size section ── */}
-          <div style={s.section}>
-            <p style={s.sectionLabel}>SIZE</p>
-            <div style={s.sizeRow}>
+          {/* ── Props ── */}
+          <div style={s.props}>
+            <p style={s.sectionLabel}>PROPS</p>
+
+            {/* animated */}
+            <PropRow label="animated" hint="enables hover animation">
+              <Switch value={animated} onChange={setAnimated} />
+            </PropRow>
+
+            {/* variant */}
+            {hasVariants && (
+              <PropRow label="variant" hint="animation style">
+                <Select
+                  value={variant}
+                  options={variants}
+                  onChange={setVariant}
+                />
+              </PropRow>
+            )}
+
+            {/* triggered */}
+            <PropRow label="triggered" hint="link to external state">
+              <div style={s.triggerGroup}>
+                <Switch value={useTrigger} onChange={setUseTrigger} />
+                {useTrigger && (
+                  <Switch value={triggered} onChange={setTriggered} accent />
+                )}
+              </div>
+            </PropRow>
+
+            {/* size */}
+            <PropRow label="size" hint={`${previewSize}px`}>
               <input
                 type="range"
                 min={24}
-                max={140}
+                max={160}
                 value={previewSize}
                 onChange={(e) => setPreviewSize(Number(e.target.value))}
                 style={s.slider}
               />
-              <span style={s.sizeValue}>{previewSize}px</span>
-            </div>
+            </PropRow>
+          </div>
+
+          <div style={s.rule} />
+
+          {/* ── Code snippet ── */}
+          <div style={s.codeWrap}>
+            <code style={s.code}>{codeSnippet}</code>
           </div>
         </motion.div>
       </motion.div>
@@ -104,169 +142,135 @@ export function PreviewModal({ name, Component, color, onClose }: PreviewModalPr
   );
 }
 
-function VariantCard({
-  Component,
-  color,
-  size,
-  variant,
-  label,
-  description,
-  codeProp,
-}: {
-  Component: React.ComponentType<IconProps & { variant?: string }>;
-  color: string;
-  size: number;
-  variant: string;
-  label: string;
-  description: string;
-  codeProp: string;
-}) {
+// ── Sub-components ──
+
+function PropRow({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
-    <div style={vc.wrap}>
-      <div style={vc.stage}>
-        <Component size={size} color={color} variant={variant} />
+    <div style={pr.row}>
+      <div style={pr.labelWrap}>
+        <span style={pr.label}>{label}</span>
+        {hint && <span style={pr.hint}>{hint}</span>}
       </div>
-      <div style={vc.meta}>
-        <p style={vc.label}>{label}</p>
-        <p style={vc.desc}>{description}</p>
-        <code style={vc.code}>{codeProp}</code>
-      </div>
+      <div style={pr.control}>{children}</div>
     </div>
   );
 }
 
-function toLabel(name: string) {
-  return name
-    .replace(/Icon$/, "")
-    .replace(/([A-Z])/g, " $1")
-    .trim();
+function Switch({ value, onChange, accent = false }: { value: boolean; onChange: (v: boolean) => void; accent?: boolean }) {
+  return (
+    <button
+      role="switch"
+      aria-checked={value}
+      onClick={() => onChange(!value)}
+      style={{
+        ...sw.track,
+        background: value ? (accent ? "#4ade80" : "#fff") : "#222",
+      }}
+    >
+      <motion.span
+        style={sw.thumb}
+        animate={{ x: value ? 14 : 0 }}
+        transition={{ duration: 0.15, ease: "easeOut" }}
+      />
+    </button>
+  );
 }
+
+function Select({ value, options, onChange }: { value: string; options: string[]; onChange: (v: string) => void }) {
+  return (
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      style={sel.select}
+    >
+      {options.map((o) => (
+        <option key={o} value={o}>{o}</option>
+      ))}
+    </select>
+  );
+}
+
+function toLabel(name: string) {
+  return name.replace(/Icon$/, "").replace(/([A-Z])/g, " $1").trim();
+}
+
+// ── Styles ──
 
 const s: Record<string, React.CSSProperties> = {
   backdrop: {
-    position: "fixed",
-    inset: 0,
+    position: "fixed", inset: 0,
     background: "rgba(0,0,0,0.75)",
     backdropFilter: "blur(6px)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: "flex", alignItems: "center", justifyContent: "center",
     zIndex: 100,
   },
   modal: {
     background: "#111",
     border: "1px solid #1f1f1f",
     borderRadius: 14,
-    width: 460,
+    width: 380,
     overflow: "hidden",
   },
   header: {
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    padding: "20px 20px 18px",
+    display: "flex", alignItems: "flex-start", justifyContent: "space-between",
+    padding: "18px 20px 16px",
   },
-  iconLabel: {
-    fontSize: 15,
-    fontWeight: 600,
-    color: "#fff",
-    letterSpacing: "-0.01em",
-    marginBottom: 3,
-  },
-  iconExport: {
-    fontSize: 11,
-    color: "#3a3a3a",
-    fontFamily: "monospace",
-  },
+  iconLabel: { fontSize: 15, fontWeight: 600, color: "#fff", letterSpacing: "-0.01em", marginBottom: 3 },
+  iconExport: { fontSize: 11, color: "#3a3a3a", fontFamily: "monospace" },
   closeBtn: {
-    width: 26,
-    height: 26,
-    background: "transparent",
-    border: "none",
-    borderRadius: 6,
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
+    width: 26, height: 26, background: "transparent", border: "none",
+    borderRadius: 6, cursor: "pointer",
+    display: "flex", alignItems: "center", justifyContent: "center",
   },
-  rule: {
-    height: 1,
-    background: "#1a1a1a",
+  rule: { height: 1, background: "#1a1a1a" },
+  stage: {
+    minHeight: 140,
+    display: "flex", alignItems: "center", justifyContent: "center",
+    backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
+    backgroundSize: "14px 14px",
+    background: "#0a0a0a",
   },
-  section: {
-    padding: "16px 20px",
-  },
-  sectionLabel: {
-    fontSize: 10,
-    fontWeight: 600,
-    letterSpacing: "0.08em",
-    color: "#3a3a3a",
-    marginBottom: 12,
-  },
-  variantRow: {
-    display: "flex",
-    gap: 10,
-  },
-  sizeRow: {
-    display: "flex",
-    alignItems: "center",
-    gap: 12,
-  },
-  slider: {
-    flex: 1,
-    accentColor: "#fff",
-    cursor: "pointer",
-  },
-  sizeValue: {
-    fontSize: 12,
-    color: "#555",
-    minWidth: 36,
-    textAlign: "right",
+  props: { padding: "14px 20px", display: "flex", flexDirection: "column", gap: 2 },
+  sectionLabel: { fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", color: "#333", marginBottom: 8 },
+  triggerGroup: { display: "flex", alignItems: "center", gap: 8 },
+  slider: { width: 120, accentColor: "#fff", cursor: "pointer" },
+  codeWrap: { padding: "12px 20px" },
+  code: {
+    display: "block", fontSize: 11, color: "#666", fontFamily: "monospace",
+    background: "#0a0a0a", border: "1px solid #1a1a1a",
+    borderRadius: 6, padding: "8px 12px", wordBreak: "break-all",
   },
 };
 
-const vc: Record<string, React.CSSProperties> = {
-  wrap: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
+const pr: Record<string, React.CSSProperties> = {
+  row: {
+    display: "flex", alignItems: "center", justifyContent: "space-between",
+    padding: "8px 0", borderBottom: "1px solid #161616",
   },
-  stage: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "#0a0a0a",
-    borderRadius: 10,
-    minHeight: 110,
-    backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
-    backgroundSize: "14px 14px",
+  labelWrap: { display: "flex", alignItems: "baseline", gap: 8 },
+  label: { fontSize: 12, fontWeight: 500, color: "#ccc" },
+  hint: { fontSize: 11, color: "#3a3a3a" },
+  control: { display: "flex", alignItems: "center" },
+};
+
+const sw: Record<string, React.CSSProperties> = {
+  track: {
+    width: 32, height: 18, borderRadius: 99,
+    border: "none", cursor: "pointer", padding: 2,
+    display: "flex", alignItems: "center",
+    transition: "background 150ms ease",
+    flexShrink: 0,
   },
-  meta: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 3,
+  thumb: {
+    width: 14, height: 14, borderRadius: "50%",
+    background: "#000", display: "block", flexShrink: 0,
   },
-  label: {
-    fontSize: 12,
-    fontWeight: 600,
-    color: "#ccc",
-  },
-  desc: {
-    fontSize: 11,
-    color: "#444",
-    lineHeight: 1.4,
-  },
-  code: {
-    fontSize: 10,
-    color: "#555",
-    fontFamily: "monospace",
-    background: "#0a0a0a",
-    border: "1px solid #1f1f1f",
-    borderRadius: 4,
-    padding: "3px 6px",
-    display: "inline-block",
-    marginTop: 2,
+};
+
+const sel: Record<string, React.CSSProperties> = {
+  select: {
+    background: "#0f0f0f", border: "1px solid #2a2a2a",
+    borderRadius: 6, color: "#ccc", fontSize: 12,
+    padding: "4px 8px", cursor: "pointer", outline: "none",
   },
 };

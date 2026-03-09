@@ -9,29 +9,32 @@ const FRAME_PATH =
 
 export interface SidebarLeftIconProps extends IconProps {
   /** Controls the hover animation style.
-   *  "slide-out" → elements slide out to the left on hover, return on exit.
-   *  "slide-in"  → elements slide in from the left on hover, reset on exit. */
-  variant?: "slide-out" | "slide-in";
+   *  "close" → sidebar content slides out left, signalling the panel will close.
+   *  "open"  → sidebar content slides in from left, signalling the panel will open. */
+  variant?: "close" | "open";
 }
 
 export function SidebarLeftIcon({
   size = 24,
   color = "currentColor",
-  animate: _animate = false,
-  variant = "slide-out",
+  animated = false,
+  triggered,
+  variant = "close",
   ...props
 }: SidebarLeftIconProps) {
   const uid = useId();
   const clipId = `sh-sidebar-clip-${uid}`;
   const [hovered, setHovered] = useState(false);
 
+  const isActive = triggered !== undefined ? triggered : (animated ? hovered : false);
+
   const divider = useAnimation();
   const line1 = useAnimation();
   const line2 = useAnimation();
 
   useEffect(() => {
-    if (hovered) {
-      if (variant === "slide-out") {
+    if (isActive) {
+      if (variant === "close") {
         // Slide out to left, staggered forward
         divider.start({ x: SLIDE, transition: { duration: 0.2, ease: "easeIn", delay: 0 } });
         line1.start({   x: SLIDE, transition: { duration: 0.2, ease: "easeIn", delay: 0.04 } });
@@ -43,7 +46,7 @@ export function SidebarLeftIcon({
         line2.start({   x: [SLIDE, 0], transition: { duration: 0.25, ease: "easeOut", delay: 0.1 } });
       }
     } else {
-      if (variant === "slide-out") {
+      if (variant === "close") {
         // Slide back in from left, staggered reverse
         line2.start({   x: 0, transition: { duration: 0.25, ease: "easeOut", delay: 0 } });
         line1.start({   x: 0, transition: { duration: 0.25, ease: "easeOut", delay: 0.04 } });
@@ -55,7 +58,7 @@ export function SidebarLeftIcon({
         line2.set({ x: 0 });
       }
     }
-  }, [hovered, variant]);
+  }, [isActive, variant]);
 
   return (
     <motion.svg
