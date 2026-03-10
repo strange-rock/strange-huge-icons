@@ -1,8 +1,13 @@
 export const FIGMA_NAMES: Record<string, string> = {
-  SidebarLeftIcon:  "sidebar-left#",
-  SidebarRightIcon: "sidebar-right#",
-  PinIcon:          "pin#",
-  PlusSignIcon:     "plus-sign#",
+  SidebarLeftIcon:      "sidebar-left#",
+  SidebarRightIcon:     "sidebar-right#",
+  PinIcon:              "pin#",
+  PlusSignIcon:         "plus-sign#",
+  ImageTwoIcon:         "image-02#",
+  ImageDownloadTwoIcon: "image-download-02#",
+  ImageNotFoundOneIcon: "image-not-found-01#",
+  ImageAddTwoIcon:      "image-add-02#",
+  AtomOneIcon:          "atom-01#",
 };
 
 export const VARIANTS: Record<string, string[]> = {

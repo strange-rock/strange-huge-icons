@@ -2,3 +2,8 @@ export { SidebarLeftIcon } from "./SidebarLeftIcon";
 export { SidebarRightIcon } from "./SidebarRightIcon";
 export { PinIcon } from "./PinIcon";
 export { PlusSignIcon } from "./PlusSignIcon";
+export { ImageTwoIcon } from "./ImageTwoIcon";
+export { ImageDownloadTwoIcon } from "./ImageDownloadTwoIcon";
+export { ImageNotFoundOneIcon } from "./ImageNotFoundOneIcon";
+export { ImageAddTwoIcon } from "./ImageAddTwoIcon";
+export { AtomOneIcon } from "./AtomOneIcon";
