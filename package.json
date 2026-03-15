@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "prepare": "tsup",
     "dev": "tsup --watch",
     "lint": "tsc --noEmit",
     "playground": "npm run dev --prefix playground"

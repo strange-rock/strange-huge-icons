@@ -27,7 +27,6 @@ export function IconCard({ name, Component, color, size, onSelect }: IconCardPro
       <div style={styles.iconWrap}>
         <Component size={size} color={color} />
       </div>
-      <span style={styles.label}>{label}</span>
     </div>
   );
 }

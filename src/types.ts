@@ -1,6 +1,6 @@
-import type { SVGProps } from "react";
+import type { SVGMotionProps } from "framer-motion";
 
-export interface IconProps extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGMotionProps<SVGSVGElement> {
   /** Icon size in px. Defaults to the value defined in Figma. */
   size?: number;
   /** Stroke/fill color. Defaults to currentColor (inherits from CSS). */
