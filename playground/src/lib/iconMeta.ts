@@ -8,6 +8,13 @@ export const FIGMA_NAMES: Record<string, string> = {
   ImageNotFoundOneIcon: "image-not-found-01#",
   ImageAddTwoIcon:      "image-add-02#",
   AtomOneIcon:          "atom-01#",
+  ArrowDownOneIcon:     "arrow-down-01#",
+  LogoIcon:             "logo#",
+  UserIcon:             "user#",
+  UserAiIcon:           "user-ai#",
+  ChatOneIcon:          "chat-01#",
+  NeuralNetworkIcon:    "neural-network#",
+  SearchOneIcon:        "search-01#",
 };
 
 export const VARIANTS: Record<string, string[]> = {

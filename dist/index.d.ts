@@ -44,4 +44,18 @@ declare function ImageAddTwoIcon({ size, color, animated, triggered, ...props }:
 
 declare function AtomOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AtomOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, PinIcon, PlusSignIcon, SidebarLeftIcon, SidebarRightIcon };
+declare function ArrowDownOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function LogoIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function UserIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function UserAiIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function ChatOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function NeuralNetworkIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function SearchOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+export { ArrowDownOneIcon, AtomOneIcon, ChatOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
