@@ -4,7 +4,67 @@ var framerMotion = require('framer-motion');
 var react = require('react');
 var jsxRuntime = require('react/jsx-runtime');
 
-// src/icons/SidebarLeftIcon.tsx
+// src/icons/BubbleChatAddIcon.tsx
+function BubbleChatAddIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const plusControls = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      plusControls.start({
+        scale: [1, 0.72, 1.08, 1],
+        transition: { duration: 0.35, ease: "easeOut" }
+      });
+    } else {
+      plusControls.stop();
+      plusControls.set({ scale: 1 });
+    }
+  }, [isActive]);
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      style: { cursor: "pointer" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          framerMotion.motion.path,
+          {
+            d: "M15.5 12H8.5M12 8.5V15.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            animate: plusControls,
+            style: { transformOrigin: "12px 12px" }
+          }
+        )
+      ]
+    }
+  );
+}
 var SLIDE = -4;
 var FRAME_PATH = "M2 12C2 8.31087 2 6.4663 2.81382 5.15877C3.1149 4.67502 3.48891 4.25427 3.91891 3.91554C5.08116 3 6.72077 3 10 3H14C17.2792 3 18.9188 3 20.0811 3.91554C20.5111 4.25427 20.8851 4.67502 21.1862 5.15877C22 6.4663 22 8.31087 22 12C22 15.6891 22 17.5337 21.1862 18.8412C20.8851 19.325 20.5111 19.7457 20.0811 20.0845C18.9188 21 17.2792 21 14 21H10C6.72077 21 5.08116 21 3.91891 20.0845C3.48891 19.7457 3.1149 19.325 2.81382 18.8412C2 17.5337 2 15.6891 2 12Z";
 function SidebarLeftIcon({
@@ -1149,6 +1209,7 @@ function SearchOneIcon({
 
 exports.ArrowDownOneIcon = ArrowDownOneIcon;
 exports.AtomOneIcon = AtomOneIcon;
+exports.BubbleChatAddIcon = BubbleChatAddIcon;
 exports.ChatOneIcon = ChatOneIcon;
 exports.ImageAddTwoIcon = ImageAddTwoIcon;
 exports.ImageDownloadTwoIcon = ImageDownloadTwoIcon;
