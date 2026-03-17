@@ -55,6 +55,7 @@ function BubbleChatAddIcon({
             strokeWidth: "1.5",
             strokeLinecap: "round",
             strokeLinejoin: "round",
+            initial: { scale: 1 },
             animate: plusControls,
             style: { transformOrigin: "12px 12px" }
           }
