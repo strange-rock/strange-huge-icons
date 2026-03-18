@@ -15,6 +15,7 @@ export const FIGMA_NAMES: Record<string, string> = {
   ChatOneIcon:          "chat-01#",
   NeuralNetworkIcon:    "neural-network#",
   SearchOneIcon:        "search-01#",
+  MoreHorizontalIcon:   "more-horizontal#",
 };
 
 export const VARIANTS: Record<string, string[]> = {

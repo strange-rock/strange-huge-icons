@@ -58,4 +58,6 @@ declare function NeuralNetworkIcon({ size, color, animated, triggered, ...props 
 
 declare function SearchOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { ArrowDownOneIcon, AtomOneIcon, ChatOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
+declare function MoreHorizontalIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+export { ArrowDownOneIcon, AtomOneIcon, ChatOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };

@@ -14,3 +14,4 @@ export { UserAiIcon } from "./UserAiIcon";
 export { ChatOneIcon } from "./ChatOneIcon";
 export { NeuralNetworkIcon } from "./NeuralNetworkIcon";
 export { SearchOneIcon } from "./SearchOneIcon";
+export { MoreHorizontalIcon } from "./MoreHorizontalIcon";
