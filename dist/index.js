@@ -1320,28 +1320,21 @@ function AbacusIcon({
   const botRightRod = useAnimation();
   useEffect(() => {
     if (isActive) {
-      bead1.start({ x: [0, -3, 0], transition: { duration: T, ease: EASE } });
-      bead2.start({ x: [0, -3, 0], transition: { duration: T, ease: EASE, delay: 0.07 } });
-      bead3.start({ x: [0, 4, 0], transition: { duration: T, ease: EASE, delay: 0.14 } });
-      topLeftRod.start({ d: [TOP_LEFT_ROD_BASE, TOP_LEFT_ROD_PEAK, TOP_LEFT_ROD_BASE], transition: { duration: T, ease: EASE } });
-      topRightRod.start({ d: [TOP_RIGHT_ROD_BASE, TOP_RIGHT_ROD_PEAK, TOP_RIGHT_ROD_BASE], transition: { duration: T, ease: EASE } });
-      botLeftRod.start({ d: [BOT_LEFT_ROD_BASE, BOT_LEFT_ROD_PEAK, BOT_LEFT_ROD_BASE], transition: { duration: T, ease: EASE, delay: 0.14 } });
-      botRightRod.start({ d: [BOT_RIGHT_ROD_BASE, BOT_RIGHT_ROD_PEAK, BOT_RIGHT_ROD_BASE], transition: { duration: T, ease: EASE, delay: 0.14 } });
+      bead1.start({ x: -3, transition: { duration: T, ease: EASE } });
+      bead2.start({ x: -3, transition: { duration: T, ease: EASE } });
+      bead3.start({ x: 4, transition: { duration: T, ease: EASE } });
+      topLeftRod.start({ d: TOP_LEFT_ROD_PEAK, transition: { duration: T, ease: EASE } });
+      topRightRod.start({ d: TOP_RIGHT_ROD_PEAK, transition: { duration: T, ease: EASE } });
+      botLeftRod.start({ d: BOT_LEFT_ROD_PEAK, transition: { duration: T, ease: EASE } });
+      botRightRod.start({ d: BOT_RIGHT_ROD_PEAK, transition: { duration: T, ease: EASE } });
     } else {
-      bead1.stop();
-      bead1.set({ x: 0 });
-      bead2.stop();
-      bead2.set({ x: 0 });
-      bead3.stop();
-      bead3.set({ x: 0 });
-      topLeftRod.stop();
-      topLeftRod.set({ d: TOP_LEFT_ROD_BASE });
-      topRightRod.stop();
-      topRightRod.set({ d: TOP_RIGHT_ROD_BASE });
-      botLeftRod.stop();
-      botLeftRod.set({ d: BOT_LEFT_ROD_BASE });
-      botRightRod.stop();
-      botRightRod.set({ d: BOT_RIGHT_ROD_BASE });
+      bead1.start({ x: 0, transition: { duration: T, ease: EASE } });
+      bead2.start({ x: 0, transition: { duration: T, ease: EASE } });
+      bead3.start({ x: 0, transition: { duration: T, ease: EASE } });
+      topLeftRod.start({ d: TOP_LEFT_ROD_BASE, transition: { duration: T, ease: EASE } });
+      topRightRod.start({ d: TOP_RIGHT_ROD_BASE, transition: { duration: T, ease: EASE } });
+      botLeftRod.start({ d: BOT_LEFT_ROD_BASE, transition: { duration: T, ease: EASE } });
+      botRightRod.start({ d: BOT_RIGHT_ROD_BASE, transition: { duration: T, ease: EASE } });
     }
   }, [isActive]);
   const sharedStroke = {
