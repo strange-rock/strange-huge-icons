@@ -18,6 +18,7 @@ export const FIGMA_NAMES: Record<string, string> = {
   SearchOneIcon:        "search-01#",
   MoreHorizontalIcon:   "more-horizontal#",
   FolderAddIcon:        "folder-add#",
+  AbacusIcon:           "abacus#",
 };
 
 export const VARIANTS: Record<string, string[]> = {

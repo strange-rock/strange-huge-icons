@@ -17,3 +17,4 @@ export { NeuralNetworkIcon } from "./NeuralNetworkIcon";
 export { SearchOneIcon } from "./SearchOneIcon";
 export { MoreHorizontalIcon } from "./MoreHorizontalIcon";
 export { FolderAddIcon } from "./FolderAddIcon";
+export { AbacusIcon } from "./AbacusIcon";
