@@ -64,6 +64,11 @@ declare function MoreHorizontalIcon({ size, color, animated: _animated, triggere
 
 declare function FolderAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
+interface FolderOneIconProps extends IconProps {
+    variant?: "closed" | "open";
+}
+declare function FolderOneIcon({ size, animated: _animated, triggered: _triggered, onClick, variant, ...props }: FolderOneIconProps): react_jsx_runtime.JSX.Element;
+
 declare function AbacusIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, ChatOneIcon, FolderAddIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
+export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };

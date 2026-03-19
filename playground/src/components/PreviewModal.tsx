@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { IconProps } from "@strange-huge/icons";
-import { FIGMA_NAMES, VARIANTS, toLabel } from "../lib/iconMeta";
+import { FIGMA_NAMES, VARIANTS, STAGE_BG, toLabel } from "../lib/iconMeta";
 
 interface PreviewModalProps {
   name: string;
@@ -13,6 +13,7 @@ interface PreviewModalProps {
 export function PreviewModal({ name, Component, color, onClose }: PreviewModalProps) {
   const variants = VARIANTS[name] ?? [];
   const hasVariants = variants.length > 0;
+  const stageBg = STAGE_BG[name] ?? "#0a0a0a";
 
   const [previewSize, setPreviewSize] = useState(64);
   const [animated, setAnimated]       = useState(true);
@@ -75,7 +76,7 @@ export function PreviewModal({ name, Component, color, onClose }: PreviewModalPr
           <div style={s.rule} />
 
           {/* ── Preview stage ── */}
-          <div style={s.stage}>
+          <div style={{ ...s.stage, background: stageBg }}>
             <Component
               size={previewSize}
               color={color}
@@ -235,9 +236,6 @@ const s: Record<string, React.CSSProperties> = {
   stage: {
     minHeight: 140,
     display: "flex", alignItems: "center", justifyContent: "center",
-    backgroundImage: "radial-gradient(circle, #1a1a1a 1px, transparent 1px)",
-    backgroundSize: "14px 14px",
-    background: "#0a0a0a",
   },
   props: { padding: "14px 20px", display: "flex", flexDirection: "column", gap: 2 },
   sectionLabel: { fontSize: 10, fontWeight: 600, letterSpacing: "0.08em", color: "#333", marginBottom: 8 },

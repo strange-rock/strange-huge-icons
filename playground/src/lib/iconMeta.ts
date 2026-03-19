@@ -19,11 +19,17 @@ export const FIGMA_NAMES: Record<string, string> = {
   MoreHorizontalIcon:   "more-horizontal#",
   FolderAddIcon:        "folder-add#",
   AbacusIcon:           "abacus#",
+  FolderOneIcon:        "folder-01#",
 };
 
 export const VARIANTS: Record<string, string[]> = {
   SidebarLeftIcon:  ["close", "open"],
   SidebarRightIcon: ["close", "open"],
+};
+
+/** Per-icon stage background override — used for icons with hardcoded colors. */
+export const STAGE_BG: Record<string, string> = {
+  FolderOneIcon: "#1E1511",
 };
 
 /** Readable label derived from the Figma name when available,

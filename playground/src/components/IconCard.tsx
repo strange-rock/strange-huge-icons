@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { IconProps } from "@strange-huge/icons";
-import { toLabel } from "../lib/iconMeta";
+import { toLabel, STAGE_BG } from "../lib/iconMeta";
 
 interface IconCardProps {
   name: string;
@@ -12,13 +12,15 @@ interface IconCardProps {
 
 export function IconCard({ name, Component, color, size, onSelect }: IconCardProps) {
   const [hovered, setHovered] = useState(false);
-  const label = toLabel(name);
+  const cardBg = STAGE_BG[name];
 
   return (
     <div
       style={{
         ...styles.card,
-        background: hovered ? "#111" : "transparent",
+        background: cardBg
+          ? (hovered ? cardBg : cardBg + "cc")
+          : (hovered ? "#111" : "transparent"),
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
