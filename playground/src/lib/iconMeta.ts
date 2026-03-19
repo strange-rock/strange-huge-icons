@@ -19,12 +19,13 @@ export const FIGMA_NAMES: Record<string, string> = {
   MoreHorizontalIcon:   "more-horizontal#",
   FolderAddIcon:        "folder-add#",
   AbacusIcon:           "abacus#",
-  FolderOneIcon:        "folder-01#",
+  FolderOneIcon:        "folder-01# / folder-03#",
 };
 
 export const VARIANTS: Record<string, string[]> = {
   SidebarLeftIcon:  ["close", "open"],
   SidebarRightIcon: ["close", "open"],
+  FolderOneIcon:    ["closed", "open"],
 };
 
 /** Per-icon stage background override — used for icons with hardcoded colors. */
