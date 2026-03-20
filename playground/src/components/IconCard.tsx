@@ -27,7 +27,7 @@ export function IconCard({ name, Component, color, size, onSelect }: IconCardPro
       onClick={onSelect}
     >
       <div style={styles.iconWrap}>
-        <Component size={size} color={color} />
+        <Component size={size} color={color} animated />
       </div>
     </div>
   );
