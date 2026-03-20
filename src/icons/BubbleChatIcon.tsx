@@ -9,8 +9,8 @@ const DOT_L = "M8.009 12H8.01797";
 const DOT_C = "M12.0045 12H12.0135";
 const DOT_R = "M16 12H16.009";
 
-const T_UP   = { duration: 0.18, ease: "easeOut" as const };
-const T_DOWN = { duration: 0.18, ease: "easeIn"  as const };
+const T_IN  = { duration: 0.22, ease: "easeOut" as const };
+const T_OUT = { duration: 0.15, ease: "easeIn"  as const };
 
 export function BubbleChatIcon({
   size = 24,
@@ -31,23 +31,29 @@ export function BubbleChatIcon({
     let cancelled = false;
 
     if (isActive) {
+      d1.set({ opacity: 0 });
+      d2.set({ opacity: 0 });
+      d3.set({ opacity: 0 });
+
       const run = async () => {
         while (!cancelled) {
-          await d1.start({ y: -2.5, transition: T_UP });
-          await d1.start({ y:    0, transition: T_DOWN });
-          await d2.start({ y: -2.5, transition: T_UP });
-          await d2.start({ y:    0, transition: T_DOWN });
-          await d3.start({ y: -2.5, transition: T_UP });
-          await d3.start({ y:    0, transition: T_DOWN });
-          // brief pause before next cycle
-          await new Promise<void>(r => setTimeout(r, 120));
+          await d1.start({ opacity: 1, transition: T_IN });
+          await d2.start({ opacity: 1, transition: T_IN });
+          await d3.start({ opacity: 1, transition: T_IN });
+          await new Promise<void>(r => setTimeout(r, 300));
+          await Promise.all([
+            d1.start({ opacity: 0, transition: T_OUT }),
+            d2.start({ opacity: 0, transition: T_OUT }),
+            d3.start({ opacity: 0, transition: T_OUT }),
+          ]);
+          await new Promise<void>(r => setTimeout(r, 100));
         }
       };
       run();
     } else {
-      d1.stop(); d1.set({ y: 0 });
-      d2.stop(); d2.set({ y: 0 });
-      d3.stop(); d3.set({ y: 0 });
+      d1.stop(); d1.set({ opacity: 1 });
+      d2.stop(); d2.set({ opacity: 1 });
+      d3.stop(); d3.set({ opacity: 1 });
     }
 
     return () => { cancelled = true; };

@@ -68,8 +68,8 @@ var BUBBLE = "M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.
 var DOT_L = "M8.009 12H8.01797";
 var DOT_C = "M12.0045 12H12.0135";
 var DOT_R = "M16 12H16.009";
-var T_UP = { duration: 0.18, ease: "easeOut" };
-var T_DOWN = { duration: 0.18, ease: "easeIn" };
+var T_IN = { duration: 0.22, ease: "easeOut" };
+var T_OUT = { duration: 0.15, ease: "easeIn" };
 function BubbleChatIcon({
   size = 24,
   color = "currentColor",
@@ -86,25 +86,31 @@ function BubbleChatIcon({
   useEffect(() => {
     let cancelled = false;
     if (isActive) {
+      d1.set({ opacity: 0 });
+      d2.set({ opacity: 0 });
+      d3.set({ opacity: 0 });
       const run = async () => {
         while (!cancelled) {
-          await d1.start({ y: -2.5, transition: T_UP });
-          await d1.start({ y: 0, transition: T_DOWN });
-          await d2.start({ y: -2.5, transition: T_UP });
-          await d2.start({ y: 0, transition: T_DOWN });
-          await d3.start({ y: -2.5, transition: T_UP });
-          await d3.start({ y: 0, transition: T_DOWN });
-          await new Promise((r) => setTimeout(r, 120));
+          await d1.start({ opacity: 1, transition: T_IN });
+          await d2.start({ opacity: 1, transition: T_IN });
+          await d3.start({ opacity: 1, transition: T_IN });
+          await new Promise((r) => setTimeout(r, 300));
+          await Promise.all([
+            d1.start({ opacity: 0, transition: T_OUT }),
+            d2.start({ opacity: 0, transition: T_OUT }),
+            d3.start({ opacity: 0, transition: T_OUT })
+          ]);
+          await new Promise((r) => setTimeout(r, 100));
         }
       };
       run();
     } else {
       d1.stop();
-      d1.set({ y: 0 });
+      d1.set({ opacity: 1 });
       d2.stop();
-      d2.set({ y: 0 });
+      d2.set({ opacity: 1 });
       d3.stop();
-      d3.set({ y: 0 });
+      d3.set({ opacity: 1 });
     }
     return () => {
       cancelled = true;
