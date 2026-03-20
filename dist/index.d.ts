@@ -16,7 +16,7 @@ interface IconProps extends SVGMotionProps<SVGSVGElement> {
 
 declare function BubbleChatAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function BubbleChatIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BubbleChatIcon({ size, color, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
 interface SidebarLeftIconProps extends IconProps {
     /** Controls the hover animation style.

@@ -75,13 +75,12 @@ var T_OUT = { duration: 0.15, ease: "easeIn" };
 function BubbleChatIcon({
   size = 24,
   color = "currentColor",
-  animated = false,
   triggered,
   onClick,
   ...props
 }) {
   const [hovered, setHovered] = react.useState(false);
-  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const isActive = triggered !== void 0 ? triggered : hovered;
   const d1 = framerMotion.useAnimation();
   const d2 = framerMotion.useAnimation();
   const d3 = framerMotion.useAnimation();
@@ -128,9 +127,9 @@ function BubbleChatIcon({
     framerMotion.motion.svg,
     {
       xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 24 24",
       width: size,
       height: size,
-      viewBox: "0 0 24 24",
       fill: "none",
       ...props,
       onHoverStart: () => setHovered(true),
@@ -138,10 +137,10 @@ function BubbleChatIcon({
       onClick,
       style: { cursor: onClick ? "pointer" : void 0 },
       children: [
-        /* @__PURE__ */ jsxRuntime.jsx("path", { d: BUBBLE, stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" }),
         /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: DOT_L, ...dotProps, animate: d1 }),
         /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: DOT_C, ...dotProps, animate: d2 }),
-        /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: DOT_R, ...dotProps, animate: d3 })
+        /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: DOT_R, ...dotProps, animate: d3 }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: BUBBLE, stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" })
       ]
     }
   );

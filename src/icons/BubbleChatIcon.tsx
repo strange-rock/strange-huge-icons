@@ -15,13 +15,12 @@ const T_OUT = { duration: 0.15, ease: "easeIn"  as const };
 export function BubbleChatIcon({
   size = 24,
   color = "currentColor",
-  animated = false,
   triggered,
   onClick,
   ...props
 }: IconProps) {
   const [hovered, setHovered] = useState(false);
-  const isActive = triggered !== undefined ? triggered : (animated ? hovered : false);
+  const isActive = triggered !== undefined ? triggered : hovered;
 
   const d1 = useAnimation();
   const d2 = useAnimation();
@@ -69,9 +68,9 @@ export function BubbleChatIcon({
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
-      viewBox="0 0 24 24"
       fill="none"
       {...props}
       onHoverStart={() => setHovered(true)}
@@ -79,10 +78,10 @@ export function BubbleChatIcon({
       onClick={onClick}
       style={{ cursor: onClick ? "pointer" : undefined }}
     >
-      <path d={BUBBLE} stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
       <motion.path d={DOT_L} {...dotProps} animate={d1} />
       <motion.path d={DOT_C} {...dotProps} animate={d2} />
       <motion.path d={DOT_R} {...dotProps} animate={d3} />
+      <path d={BUBBLE} stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" fill="none" />
     </motion.svg>
   );
 }
