@@ -64,6 +64,80 @@ function BubbleChatAddIcon({
     }
   );
 }
+var BUBBLE = "M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z";
+var DOT_L = "M8.009 12H8.01797";
+var DOT_C = "M12.0045 12H12.0135";
+var DOT_R = "M16 12H16.009";
+var T_UP = { duration: 0.18, ease: "easeOut" };
+var T_DOWN = { duration: 0.18, ease: "easeIn" };
+function BubbleChatIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const d1 = useAnimation();
+  const d2 = useAnimation();
+  const d3 = useAnimation();
+  useEffect(() => {
+    let cancelled = false;
+    if (isActive) {
+      const run = async () => {
+        while (!cancelled) {
+          await d1.start({ y: -2.5, transition: T_UP });
+          await d1.start({ y: 0, transition: T_DOWN });
+          await d2.start({ y: -2.5, transition: T_UP });
+          await d2.start({ y: 0, transition: T_DOWN });
+          await d3.start({ y: -2.5, transition: T_UP });
+          await d3.start({ y: 0, transition: T_DOWN });
+          await new Promise((r) => setTimeout(r, 120));
+        }
+      };
+      run();
+    } else {
+      d1.stop();
+      d1.set({ y: 0 });
+      d2.stop();
+      d2.set({ y: 0 });
+      d3.stop();
+      d3.set({ y: 0 });
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [isActive]);
+  const dotProps = {
+    stroke: color,
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    fill: "none"
+  };
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      ...props,
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: onClick ? "pointer" : void 0 },
+      children: [
+        /* @__PURE__ */ jsx("path", { d: BUBBLE, stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" }),
+        /* @__PURE__ */ jsx(motion.path, { d: DOT_L, ...dotProps, animate: d1 }),
+        /* @__PURE__ */ jsx(motion.path, { d: DOT_C, ...dotProps, animate: d2 }),
+        /* @__PURE__ */ jsx(motion.path, { d: DOT_R, ...dotProps, animate: d3 })
+      ]
+    }
+  );
+}
 var SLIDE = -4;
 var FRAME_PATH = "M2 12C2 8.31087 2 6.4663 2.81382 5.15877C3.1149 4.67502 3.48891 4.25427 3.91891 3.91554C5.08116 3 6.72077 3 10 3H14C17.2792 3 18.9188 3 20.0811 3.91554C20.5111 4.25427 20.8851 4.67502 21.1862 5.15877C22 6.4663 22 8.31087 22 12C22 15.6891 22 17.5337 21.1862 18.8412C20.8851 19.325 20.5111 19.7457 20.0811 20.0845C18.9188 21 17.2792 21 14 21H10C6.72077 21 5.08116 21 3.91891 20.0845C3.48891 19.7457 3.1149 19.325 2.81382 18.8412C2 17.5337 2 15.6891 2 12Z";
 function SidebarLeftIcon({
@@ -1441,6 +1515,6 @@ function AbacusIcon({
   );
 }
 
-export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
+export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, BubbleChatIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

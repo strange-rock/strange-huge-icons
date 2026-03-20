@@ -1,5 +1,6 @@
 export const FIGMA_NAMES: Record<string, string> = {
   BubbleChatAddIcon:    "bubble-chat-add#",
+  BubbleChatIcon:       "bubble-chat#",
   SidebarLeftIcon:      "sidebar-left#",
   SidebarRightIcon:     "sidebar-right#",
   PinIcon:              "pin#",

@@ -16,6 +16,8 @@ interface IconProps extends SVGMotionProps<SVGSVGElement> {
 
 declare function BubbleChatAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
+declare function BubbleChatIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
 interface SidebarLeftIconProps extends IconProps {
     /** Controls the hover animation style.
      *  "close" → sidebar content slides out left, signalling the panel will close.
@@ -71,4 +73,4 @@ declare function FolderOneIcon({ size, animated: _animated, triggered: _triggere
 
 declare function AbacusIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
+export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, BubbleChatAddIcon, BubbleChatIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, UserAiIcon, UserIcon };
