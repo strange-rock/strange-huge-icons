@@ -35,18 +35,12 @@ export function BubbleChatIcon({
       d3.set({ opacity: 0 });
 
       const run = async () => {
-        while (!cancelled) {
-          await d1.start({ opacity: 1, transition: T_IN });
-          await d2.start({ opacity: 1, transition: T_IN });
-          await d3.start({ opacity: 1, transition: T_IN });
-          await new Promise<void>(r => setTimeout(r, 300));
-          await Promise.all([
-            d1.start({ opacity: 0, transition: T_OUT }),
-            d2.start({ opacity: 0, transition: T_OUT }),
-            d3.start({ opacity: 0, transition: T_OUT }),
-          ]);
-          await new Promise<void>(r => setTimeout(r, 100));
-        }
+        if (cancelled) return;
+        await d1.start({ opacity: 1, transition: T_IN });
+        if (cancelled) return;
+        await d2.start({ opacity: 1, transition: T_IN });
+        if (cancelled) return;
+        await d3.start({ opacity: 1, transition: T_IN });
       };
       run();
     } else {

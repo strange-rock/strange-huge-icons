@@ -69,7 +69,6 @@ var DOT_L = "M8.009 12H8.01797";
 var DOT_C = "M12.0045 12H12.0135";
 var DOT_R = "M16 12H16.009";
 var T_IN = { duration: 0.22, ease: "easeOut" };
-var T_OUT = { duration: 0.15, ease: "easeIn" };
 function BubbleChatIcon({
   size = 24,
   color = "currentColor",
@@ -89,18 +88,12 @@ function BubbleChatIcon({
       d2.set({ opacity: 0 });
       d3.set({ opacity: 0 });
       const run = async () => {
-        while (!cancelled) {
-          await d1.start({ opacity: 1, transition: T_IN });
-          await d2.start({ opacity: 1, transition: T_IN });
-          await d3.start({ opacity: 1, transition: T_IN });
-          await new Promise((r) => setTimeout(r, 300));
-          await Promise.all([
-            d1.start({ opacity: 0, transition: T_OUT }),
-            d2.start({ opacity: 0, transition: T_OUT }),
-            d3.start({ opacity: 0, transition: T_OUT })
-          ]);
-          await new Promise((r) => setTimeout(r, 100));
-        }
+        if (cancelled) return;
+        await d1.start({ opacity: 1, transition: T_IN });
+        if (cancelled) return;
+        await d2.start({ opacity: 1, transition: T_IN });
+        if (cancelled) return;
+        await d3.start({ opacity: 1, transition: T_IN });
       };
       run();
     } else {
