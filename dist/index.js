@@ -65,7 +65,7 @@ function BubbleChatAddIcon({
   );
 }
 var BUBBLE = "M21.5 12C21.5 17.2467 17.2467 21.5 12 21.5C10.3719 21.5 8.8394 21.0904 7.5 20.3687C5.63177 19.362 4.37462 20.2979 3.26592 20.4658C3.09774 20.4913 2.93024 20.4302 2.80997 20.31C2.62741 20.1274 2.59266 19.8451 2.6935 19.6074C3.12865 18.5818 3.5282 16.6382 2.98341 15C2.6698 14.057 2.5 13.0483 2.5 12C2.5 6.75329 6.75329 2.5 12 2.5C17.2467 2.5 21.5 6.75329 21.5 12Z";
-var DOT_L = "M8.009 12H8.01797";
+var DOT_L = "M8.00903 12H8.018";
 var DOT_C = "M12.0045 12H12.0135";
 var DOT_R = "M16 12H16.009";
 var T_IN = { duration: 0.22, ease: "easeOut" };
@@ -110,8 +110,9 @@ function BubbleChatIcon({
   }, [isActive]);
   const dotProps = {
     stroke: color,
-    strokeWidth: 2,
+    strokeWidth: 1.5,
     strokeLinecap: "round",
+    strokeLinejoin: "round",
     fill: "none"
   };
   return /* @__PURE__ */ jsxs(
@@ -131,7 +132,7 @@ function BubbleChatIcon({
         /* @__PURE__ */ jsx(motion.path, { d: DOT_L, ...dotProps, animate: d1 }),
         /* @__PURE__ */ jsx(motion.path, { d: DOT_C, ...dotProps, animate: d2 }),
         /* @__PURE__ */ jsx(motion.path, { d: DOT_R, ...dotProps, animate: d3 }),
-        /* @__PURE__ */ jsx("path", { d: BUBBLE, stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" })
+        /* @__PURE__ */ jsx("path", { d: BUBBLE, stroke: color, strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" })
       ]
     }
   );
