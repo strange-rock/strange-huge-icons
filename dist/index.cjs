@@ -1530,8 +1530,8 @@ function MicTwoIcon({
     setHovered(active);
     if (active) {
       await controls.start({
-        rotate: [-2, 2, -2, 2, -2, 2, 0],
-        transition: { duration: 0.55, ease: "easeInOut", times: [0, 0.17, 0.33, 0.5, 0.67, 0.83, 1] }
+        rotate: [-8, 6, -3, 1, 0],
+        transition: { duration: 0.6, ease: "easeInOut", times: [0, 0.25, 0.5, 0.75, 1] }
       });
     } else {
       controls.stop();
