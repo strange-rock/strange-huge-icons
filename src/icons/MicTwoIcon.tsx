@@ -23,8 +23,8 @@ export function MicTwoIcon({
     setHovered(active);
     if (active) {
       await controls.start({
-        rotate: [-4, 4, -3, 3, -1, 0],
-        transition: { duration: 0.5, ease: "easeInOut", times: [0, 0.2, 0.4, 0.6, 0.8, 1] },
+        rotate: [-2, 2, -2, 2, -2, 2, 0],
+        transition: { duration: 0.55, ease: "easeInOut", times: [0, 0.17, 0.33, 0.5, 0.67, 0.83, 1] },
       });
     } else {
       controls.stop();
