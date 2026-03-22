@@ -21,3 +21,5 @@ export { FolderAddIcon } from "./FolderAddIcon";
 export { FolderOneIcon } from "./FolderOneIcon";
 export { AbacusIcon } from "./AbacusIcon";
 export { MicTwoIcon } from "./MicTwoIcon";
+export { AudioWaveOneIcon } from "./AudioWaveOneIcon";
+export { StopCircleIcon } from "./StopCircleIcon";

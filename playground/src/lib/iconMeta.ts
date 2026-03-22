@@ -21,6 +21,8 @@ export const FIGMA_NAMES: Record<string, string> = {
   FolderAddIcon:        "folder-add#",
   AbacusIcon:           "abacus#",
   MicTwoIcon:           "mic-02#",
+  AudioWaveOneIcon:     "audio-wave-01#",
+  StopCircleIcon:       "stop-circle#",
   FolderOneIcon:        "folder-01# / folder-03#",
 };
 
