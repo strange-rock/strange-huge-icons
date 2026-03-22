@@ -20,6 +20,7 @@ export const FIGMA_NAMES: Record<string, string> = {
   MoreHorizontalIcon:   "more-horizontal#",
   FolderAddIcon:        "folder-add#",
   AbacusIcon:           "abacus#",
+  MicTwoIcon:           "mic-02#",
   FolderOneIcon:        "folder-01# / folder-03#",
 };
 

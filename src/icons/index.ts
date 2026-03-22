@@ -20,3 +20,4 @@ export { MoreHorizontalIcon } from "./MoreHorizontalIcon";
 export { FolderAddIcon } from "./FolderAddIcon";
 export { FolderOneIcon } from "./FolderOneIcon";
 export { AbacusIcon } from "./AbacusIcon";
+export { MicTwoIcon } from "./MicTwoIcon";
