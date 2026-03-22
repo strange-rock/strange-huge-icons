@@ -1597,9 +1597,51 @@ function StopCircleIcon({
     /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M9.38886 15.1629C9.89331 15.5 10.5955 15.5 12 15.5C13.4045 15.5 14.1067 15.5 14.6111 15.1629C14.8295 15.017 15.017 14.8295 15.1629 14.6111C15.5 14.1067 15.5 13.4045 15.5 12C15.5 10.5955 15.5 9.89331 15.1629 9.38886C15.017 9.17048 14.8295 8.98298 14.6111 8.83706C14.1067 8.5 13.4045 8.5 12 8.5C10.5955 8.5 9.89331 8.5 9.38886 8.83706C9.17048 8.98298 8.98298 9.17048 8.83706 9.38886C8.5 9.89331 8.5 10.5955 8.5 12C8.5 13.4045 8.5 14.1067 8.83706 14.6111C8.98298 14.8295 9.17048 15.017 9.38886 15.1629Z", fill: color, stroke: color, strokeWidth: 1.5 })
   ] });
 }
+function ArrowUpTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const controls = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      controls.start({
+        y: [0, -3, 0],
+        transition: { duration: 0.35, ease: "easeInOut" }
+      });
+    } else {
+      controls.stop();
+      controls.set({ y: 0 });
+    }
+  }, [isActive]);
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      animate: controls,
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      style: { cursor: "pointer", transformOrigin: "center" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M12 5.5V19", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M18 11C18 11 13.5811 5.00001 12 5C10.4188 4.99999 6 11 6 11", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
+      ]
+    }
+  );
+}
 
 exports.AbacusIcon = AbacusIcon;
 exports.ArrowDownOneIcon = ArrowDownOneIcon;
+exports.ArrowUpTwoIcon = ArrowUpTwoIcon;
 exports.AtomOneIcon = AtomOneIcon;
 exports.AudioWaveOneIcon = AudioWaveOneIcon;
 exports.BubbleChatAddIcon = BubbleChatAddIcon;

@@ -79,4 +79,6 @@ declare function AudioWaveOneIcon({ size, color, animated: _animated, triggered:
 
 declare function StopCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, ArrowDownOneIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, StopCircleIcon, UserAiIcon, UserIcon };
+declare function ArrowUpTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+export { AbacusIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, StopCircleIcon, UserAiIcon, UserIcon };
