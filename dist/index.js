@@ -1673,7 +1673,7 @@ function ExchangeOneIcon({
     if (isActive) {
       controls.start({ rotate: 180, transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } });
     } else {
-      controls.start({ rotate: 0, transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } });
+      controls.set({ rotate: 0 });
     }
   }, [isActive]);
   return /* @__PURE__ */ jsx(
