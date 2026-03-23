@@ -1636,7 +1636,29 @@ function ArrowUpTwoIcon({
     }
   );
 }
+function CancelOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsx(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: /* @__PURE__ */ jsx("path", { d: "M18 6L6.00081 17.9992M17.9992 18L6 6.00085", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
+    }
+  );
+}
 
-export { AbacusIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, StopCircleIcon, UserAiIcon, UserIcon };
+export { AbacusIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, FolderAddIcon, FolderOneIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, StopCircleIcon, UserAiIcon, UserIcon };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

@@ -24,3 +24,4 @@ export { MicTwoIcon } from "./MicTwoIcon";
 export { AudioWaveOneIcon } from "./AudioWaveOneIcon";
 export { StopCircleIcon } from "./StopCircleIcon";
 export { ArrowUpTwoIcon } from "./ArrowUpTwoIcon";
+export { CancelOneIcon } from "./CancelOneIcon";
