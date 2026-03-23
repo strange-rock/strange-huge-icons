@@ -24,6 +24,7 @@ export const FIGMA_NAMES: Record<string, string> = {
   AudioWaveOneIcon:     "audio-wave-01#",
   ArrowUpTwoIcon:       "arrow-up-02#",
   CancelOneIcon:        "cancel-01#",
+  ExchangeOneIcon:      "exchange-01#",
   StopCircleIcon:       "stop-circle#",
   FolderOneIcon:        "folder-01# / folder-03#",
 };
