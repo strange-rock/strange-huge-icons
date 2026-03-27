@@ -85,14 +85,14 @@ declare function CancelOneIcon({ size, color, animated: _animated, triggered: _t
 
 declare function ExchangeOneIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function StarIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function StarIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function TextIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TextIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function SourceCodeSquareIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SourceCodeSquareIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function AiVisionRecognitionIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AiVisionRecognitionIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-declare function GlobalSearchIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function GlobalSearchIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
 export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon };
