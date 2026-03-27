@@ -24,7 +24,12 @@ export const FIGMA_NAMES: Record<string, string> = {
   AudioWaveOneIcon:     "audio-wave-01#",
   ArrowUpTwoIcon:       "arrow-up-02#",
   CancelOneIcon:        "cancel-01#",
-  ExchangeOneIcon:      "exchange-01#",
+  ExchangeOneIcon:          "exchange-01#",
+  StarIcon:                 "star#",
+  TextIcon:                 "text#",
+  SourceCodeSquareIcon:     "source-code-square#",
+  AiVisionRecognitionIcon:  "ai-vision-recognition#",
+  GlobalSearchIcon:         "global-search#",
   StopCircleIcon:       "stop-circle#",
   FolderOneIcon:        "folder-01# / folder-03#",
 };

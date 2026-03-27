@@ -26,3 +26,8 @@ export { StopCircleIcon } from "./StopCircleIcon";
 export { ArrowUpTwoIcon } from "./ArrowUpTwoIcon";
 export { CancelOneIcon } from "./CancelOneIcon";
 export { ExchangeOneIcon } from "./ExchangeOneIcon";
+export { StarIcon } from "./StarIcon";
+export { TextIcon } from "./TextIcon";
+export { SourceCodeSquareIcon } from "./SourceCodeSquareIcon";
+export { AiVisionRecognitionIcon } from "./AiVisionRecognitionIcon";
+export { GlobalSearchIcon } from "./GlobalSearchIcon";

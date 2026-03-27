@@ -1696,8 +1696,232 @@ function ExchangeOneIcon({
     }
   );
 }
+function StarIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const controls = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      controls.start({ scale: [1, 0.72, 1.08, 1], transition: { duration: 0.35, ease: "easeOut" } });
+    } else {
+      controls.stop();
+      controls.set({ scale: 1 });
+    }
+  }, [isActive]);
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      animate: controls,
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: "pointer", transformOrigin: "center" },
+      ...props,
+      children: /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
+    }
+  );
+}
+function TextIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const controls = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      controls.start({ scale: [1, 0.72, 1.08, 1], transition: { duration: 0.35, ease: "easeOut" } });
+    } else {
+      controls.stop();
+      controls.set({ scale: 1 });
+    }
+  }, [isActive]);
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      animate: controls,
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: "pointer", transformOrigin: "center" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M15 21.001H9", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M12 3.00001V21.0008M12 3.00001C13.3874 3.00001 15.1695 3.03055 16.5884 3.17649C17.1885 3.2382 17.4886 3.26906 17.7541 3.37791C18.3066 3.60429 18.7518 4.10063 18.9194 4.67681C19 4.95382 19 5.26992 19 5.90215M12 3.00001C10.6126 3.00001 8.83047 3.03055 7.41161 3.17649C6.8115 3.2382 6.51144 3.26906 6.24586 3.37791C5.69344 3.60429 5.24816 4.10063 5.08057 4.67681C5 4.95382 5 5.26992 5 5.90215", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
+      ]
+    }
+  );
+}
+var T3 = { duration: 0.28, ease: [0.4, 0, 0.2, 1] };
+function SourceCodeSquareIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const left = framerMotion.useAnimation();
+  const right = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      left.start({ x: -2, transition: T3 });
+      right.start({ x: 2, transition: T3 });
+    } else {
+      left.start({ x: 0, transition: T3 });
+      right.start({ x: 0, transition: T3 });
+    }
+  }, [isActive]);
+  const p = { stroke: color, strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" };
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: "pointer" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M13 9L11 15", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: "M8 10L6.77346 11.0572C6.25782 11.5016 6 11.7239 6 12C6 12.2761 6.25782 12.4984 6.77346 12.9428L8 14", ...p, animate: left }),
+        /* @__PURE__ */ jsxRuntime.jsx(framerMotion.motion.path, { d: "M16 10L17.2265 11.0572C17.7422 11.5016 18 11.7239 18 12C18 12.2761 17.7422 12.4984 17.2265 12.9428L16 14", ...p, animate: right })
+      ]
+    }
+  );
+}
+function AiVisionRecognitionIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const diamond = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      diamond.start({
+        scale: [1, 1.3, 0.9, 1.1, 1],
+        transition: { duration: 0.45, ease: "easeInOut" }
+      });
+    } else {
+      diamond.stop();
+      diamond.set({ scale: 1 });
+    }
+  }, [isActive]);
+  const p = { stroke: color, strokeWidth: 1.5, strokeLinejoin: "round", fill: "none" };
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: "pointer" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M22 12C22 12 19 19 12 19C5 19 2 12 2 12C2 12 5 5 12 5C18.5 5 22 12 22 12Z", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          framerMotion.motion.path,
+          {
+            d: "M11.6769 8.67738C11.8274 8.44087 12.1726 8.44087 12.3231 8.67738L12.7586 9.36157C13.2401 10.1182 13.8818 10.7599 14.6384 11.2414L15.3226 11.6769C15.5591 11.8274 15.5591 12.1726 15.3226 12.3231L14.6384 12.7586C13.8818 13.2401 13.2401 13.8818 12.7586 14.6384L12.3231 15.3226C12.1726 15.5591 11.8274 15.5591 11.6769 15.3226L11.2414 14.6384C10.7599 13.8818 10.1182 13.2401 9.36157 12.7586L8.67738 12.3231C8.44087 12.1726 8.44087 11.8274 8.67738 11.6769L9.36157 11.2414C10.1182 10.7599 10.7599 10.1182 11.2414 9.36157L11.6769 8.67738Z",
+            ...p,
+            animate: diamond,
+            style: { transformOrigin: "12px 12px" }
+          }
+        )
+      ]
+    }
+  );
+}
+function GlobalSearchIcon({
+  size = 24,
+  color = "currentColor",
+  animated = false,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const lens = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (isActive) {
+      lens.start({ scale: [1, 0.8, 1.1, 1], transition: { duration: 0.35, ease: "easeOut" } });
+    } else {
+      lens.stop();
+      lens.set({ scale: 1 });
+    }
+  }, [isActive]);
+  const p = { stroke: color, strokeWidth: 1.5, strokeLinecap: "round", fill: "none" };
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      onClick,
+      style: { cursor: "pointer" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M20 5.69899C19.0653 5.76636 17.8681 6.12824 17.0379 7.20277C15.5385 9.14361 14.039 9.30556 13.0394 8.65861C11.5399 7.6882 12.8 6.11636 11.0401 5.26215C9.89313 4.70542 9.73321 3.19045 10.3716 2", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M2 11C2.7625 11.6621 3.83046 12.2682 5.08874 12.2682C7.68843 12.2682 8.20837 12.7649 8.20837 14.7518C8.20837 16.7387 8.20837 16.7387 8.72831 18.2288C9.06651 19.1981 9.18472 20.1674 8.5106 21", ...p }),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          framerMotion.motion.path,
+          {
+            d: "M19.8988 19.9288L22 22M21.1083 17.0459C21.1083 19.2805 19.2932 21.0919 17.0541 21.0919C14.8151 21.0919 13 19.2805 13 17.0459C13 14.8114 14.8151 13 17.0541 13C19.2932 13 21.1083 14.8114 21.1083 17.0459Z",
+            ...p,
+            animate: lens,
+            style: { transformOrigin: "17px 17px" }
+          }
+        )
+      ]
+    }
+  );
+}
 
 exports.AbacusIcon = AbacusIcon;
+exports.AiVisionRecognitionIcon = AiVisionRecognitionIcon;
 exports.ArrowDownOneIcon = ArrowDownOneIcon;
 exports.ArrowUpTwoIcon = ArrowUpTwoIcon;
 exports.AtomOneIcon = AtomOneIcon;
@@ -1709,6 +1933,7 @@ exports.ChatOneIcon = ChatOneIcon;
 exports.ExchangeOneIcon = ExchangeOneIcon;
 exports.FolderAddIcon = FolderAddIcon;
 exports.FolderOneIcon = FolderOneIcon;
+exports.GlobalSearchIcon = GlobalSearchIcon;
 exports.ImageAddTwoIcon = ImageAddTwoIcon;
 exports.ImageDownloadTwoIcon = ImageDownloadTwoIcon;
 exports.ImageNotFoundOneIcon = ImageNotFoundOneIcon;
@@ -1722,7 +1947,10 @@ exports.PlusSignIcon = PlusSignIcon;
 exports.SearchOneIcon = SearchOneIcon;
 exports.SidebarLeftIcon = SidebarLeftIcon;
 exports.SidebarRightIcon = SidebarRightIcon;
+exports.SourceCodeSquareIcon = SourceCodeSquareIcon;
+exports.StarIcon = StarIcon;
 exports.StopCircleIcon = StopCircleIcon;
+exports.TextIcon = TextIcon;
 exports.UserAiIcon = UserAiIcon;
 exports.UserIcon = UserIcon;
 //# sourceMappingURL=index.cjs.map
