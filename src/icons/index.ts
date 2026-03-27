@@ -31,3 +31,4 @@ export { TextIcon } from "./TextIcon";
 export { SourceCodeSquareIcon } from "./SourceCodeSquareIcon";
 export { AiVisionRecognitionIcon } from "./AiVisionRecognitionIcon";
 export { GlobalSearchIcon } from "./GlobalSearchIcon";
+export { ViewIcon } from "./ViewIcon";

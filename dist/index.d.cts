@@ -95,4 +95,9 @@ declare function AiVisionRecognitionIcon({ size, color, animated: _a, triggered:
 
 declare function GlobalSearchIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon };
+interface ViewIconProps extends IconProps {
+    variant?: "visible" | "hidden";
+}
+declare function ViewIcon({ size, color, animated: _animated, triggered: _triggered, variant, onClick, ...props }: ViewIconProps): react_jsx_runtime.JSX.Element;
+
+export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon, ViewIcon };

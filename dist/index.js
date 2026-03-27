@@ -1728,7 +1728,93 @@ function GlobalSearchIcon({ size = 24, color = "currentColor", animated: _a, tri
     /* @__PURE__ */ jsx("path", { d: "M19.8988 19.9288L22 22M21.1083 17.0459C21.1083 19.2805 19.2932 21.0919 17.0541 21.0919C14.8151 21.0919 13 19.2805 13 17.0459C13 14.8114 14.8151 13 17.0541 13C19.2932 13 21.1083 14.8114 21.1083 17.0459Z", ...p })
   ] });
 }
+var EYE_OUTLINE = "M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z";
+var EYE_PUPIL = "M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z";
+var EYE_OFF_OUTLINE = "M19.439 15.439C20.3636 14.5212 21.0775 13.6091 21.544 12.955C21.848 12.5287 22 12.3155 22 12C22 11.6845 21.848 11.4713 21.544 11.045C20.1779 9.12944 16.6892 5 12 5C11.0922 5 10.2294 5.15476 9.41827 5.41827M6.74742 6.74742C4.73118 8.1072 3.24215 9.94266 2.45604 11.045C2.15201 11.4713 2 11.6845 2 12C2 12.3155 2.15201 12.5287 2.45604 12.955C3.8221 14.8706 7.31078 19 12 19C13.9908 19 15.7651 18.2557 17.2526 17.2526";
+var EYE_OFF_PUPIL = "M9.85786 10C9.32783 10.53 9 11.2623 9 12.0711C9 13.6887 10.3113 15 11.9289 15C12.7377 15 13.47 14.6722 14 14.1421";
+var SLASH = "M3 3L21 21";
+function ViewIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  variant,
+  onClick,
+  ...props
+}) {
+  const [internalHidden, setInternalHidden] = useState(false);
+  const isHidden = variant !== void 0 ? variant === "hidden" : internalHidden;
+  const eyeOn = useAnimation();
+  const eyeOff = useAnimation();
+  const slash = useAnimation();
+  useEffect(() => {
+    if (isHidden) {
+      eyeOn.start({ opacity: 0, transition: { duration: 0.2 } });
+      eyeOff.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+      slash.start({
+        opacity: 1,
+        pathLength: [0, 0.45, 0.45, 1],
+        transition: {
+          opacity: { duration: 0.01, delay: 0.1 },
+          pathLength: {
+            duration: 0.65,
+            delay: 0.12,
+            times: [0, 0.38, 0.62, 1],
+            ease: "easeInOut"
+          }
+        }
+      });
+    } else {
+      slash.start({ opacity: 0, pathLength: 0, transition: { duration: 0.15 } });
+      eyeOff.start({ opacity: 0, transition: { duration: 0.2 } });
+      eyeOn.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+    }
+  }, [isHidden]);
+  const handleClick = (e) => {
+    if (variant === void 0) setInternalHidden((h) => !h);
+    if (typeof onClick === "function") onClick(e);
+  };
+  const p = {
+    stroke: color,
+    strokeWidth: 1.5,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    fill: "none"
+  };
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick: handleClick,
+      style: { cursor: "pointer" },
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxs(motion.g, { animate: eyeOn, initial: { opacity: 1 }, children: [
+          /* @__PURE__ */ jsx("path", { d: EYE_OUTLINE, ...p, strokeLinecap: void 0 }),
+          /* @__PURE__ */ jsx("path", { d: EYE_PUPIL, ...p, strokeLinecap: void 0 })
+        ] }),
+        /* @__PURE__ */ jsxs(motion.g, { animate: eyeOff, initial: { opacity: 0 }, children: [
+          /* @__PURE__ */ jsx("path", { d: EYE_OFF_OUTLINE, ...p }),
+          /* @__PURE__ */ jsx("path", { d: EYE_OFF_PUPIL, ...p })
+        ] }),
+        /* @__PURE__ */ jsx(
+          motion.path,
+          {
+            d: SLASH,
+            ...p,
+            animate: slash,
+            initial: { opacity: 0, pathLength: 0 }
+          }
+        )
+      ]
+    }
+  );
+}
 
-export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon };
+export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon, ViewIcon };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

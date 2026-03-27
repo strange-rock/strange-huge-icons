@@ -30,6 +30,7 @@ export const FIGMA_NAMES: Record<string, string> = {
   SourceCodeSquareIcon:     "source-code-square#",
   AiVisionRecognitionIcon:  "ai-vision-recognition#",
   GlobalSearchIcon:         "global-search#",
+  ViewIcon:                 "view# / view-off-slash#",
   StopCircleIcon:       "stop-circle#",
   FolderOneIcon:        "folder-01# / folder-03#",
 };
@@ -38,6 +39,7 @@ export const VARIANTS: Record<string, string[]> = {
   SidebarLeftIcon:  ["close", "open"],
   SidebarRightIcon: ["close", "open"],
   FolderOneIcon:    ["closed", "open"],
+  ViewIcon:         ["visible", "hidden"],
 };
 
 /** Per-icon stage background override — used for icons with hardcoded colors. */
