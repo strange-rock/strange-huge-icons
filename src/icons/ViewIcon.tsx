@@ -28,8 +28,12 @@ export function ViewIcon({
   onClick,
   ...props
 }: ViewIconProps) {
-  const [internalHidden, setInternalHidden] = useState(false);
-  const isHidden = variant !== undefined ? variant === "hidden" : internalHidden;
+  const [isHidden, setIsHidden] = useState(variant === "hidden");
+
+  // sync if variant changes externally
+  useEffect(() => {
+    if (variant !== undefined) setIsHidden(variant === "hidden");
+  }, [variant]);
 
   const eyeOn  = useAnimation();
   const eyeOff = useAnimation();
@@ -37,37 +41,41 @@ export function ViewIcon({
 
   useEffect(() => {
     if (isHidden) {
-      // visible → hidden: eyes crossfade, slash draws quickly to ~half then eases to full
-      eyeOn.start({ opacity: 0, transition: { duration: 0.35, ease: "easeInOut" } });
-      eyeOff.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.05 } });
+      // visible → hidden: quick crossfade, slash draws fast to ~half then eases to full
+      eyeOn.start({ opacity: 0, transition: { duration: 0.2, ease: "easeInOut" } });
+      eyeOff.start({ opacity: 1, transition: { duration: 0.2, ease: "easeInOut" } });
       slash.start({
         opacity: 1,
         pathLength: [0, 0.5, 1],
         transition: {
-          opacity: { duration: 0.01, delay: 0.05 },
+          opacity: { duration: 0.01 },
           pathLength: {
-            duration: 0.75,
-            delay: 0.05,
-            times: [0, 0.32, 1],
-            ease: ["easeIn", [0.15, 0, 0.4, 1]],
+            duration: 0.45,
+            times: [0, 0.35, 1],
+            ease: ["easeIn", [0.1, 0, 0.35, 1]],
           },
         },
       });
     } else {
-      // hidden → visible: slash fades, eyes crossfade back
+      // hidden → visible: slash retracts, eyes crossfade back
       slash.start({
-        opacity: 0,
-        transition: { duration: 0.25, ease: "easeInOut" },
+        pathLength: [1, 0.5, 0],
+        transition: {
+          pathLength: {
+            duration: 0.45,
+            times: [0, 0.65, 1],
+            ease: [[0.65, 0, 0.9, 1], "easeOut"],
+          },
+        },
       });
-      eyeOff.start({ opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } });
-      eyeOn.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.1 } });
-      // reset pathLength after fade so next draw starts clean
-      setTimeout(() => slash.set({ pathLength: 0 }), 300);
+      eyeOff.start({ opacity: 0, transition: { duration: 0.2, ease: "easeInOut" } });
+      eyeOn.start({ opacity: 1, transition: { duration: 0.2, ease: "easeInOut", delay: 0.1 } });
+      setTimeout(() => slash.set({ opacity: 0 }), 500);
     }
   }, [isHidden]);
 
   const handleClick = (e: React.MouseEvent<SVGSVGElement>) => {
-    if (variant === undefined) setInternalHidden(h => !h);
+    setIsHidden(h => !h);
     if (typeof onClick === "function") onClick(e as unknown as React.MouseEvent<SVGSVGElement>);
   };
 
