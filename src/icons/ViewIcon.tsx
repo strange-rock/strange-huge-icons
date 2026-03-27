@@ -35,30 +35,34 @@ export function ViewIcon({
   const eyeOff = useAnimation();
   const slash  = useAnimation();
 
-  // Run transition whenever isHidden changes
   useEffect(() => {
     if (isHidden) {
-      // visible → hidden: crossfade eye, then draw slash (partial pause then complete)
-      eyeOn.start({ opacity: 0, transition: { duration: 0.2 } });
-      eyeOff.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+      // visible → hidden: eyes crossfade, slash draws quickly to ~half then eases to full
+      eyeOn.start({ opacity: 0, transition: { duration: 0.35, ease: "easeInOut" } });
+      eyeOff.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.05 } });
       slash.start({
         opacity: 1,
-        pathLength: [0, 0.45, 0.45, 1],
+        pathLength: [0, 0.5, 1],
         transition: {
-          opacity: { duration: 0.01, delay: 0.1 },
+          opacity: { duration: 0.01, delay: 0.05 },
           pathLength: {
-            duration: 0.65,
-            delay: 0.12,
-            times: [0, 0.38, 0.62, 1],
-            ease: "easeInOut",
+            duration: 0.75,
+            delay: 0.05,
+            times: [0, 0.32, 1],
+            ease: ["easeIn", [0.15, 0, 0.4, 1]],
           },
         },
       });
     } else {
-      // hidden → visible: fade slash + off-eye out, fade on-eye in
-      slash.start({ opacity: 0, pathLength: 0, transition: { duration: 0.15 } });
-      eyeOff.start({ opacity: 0, transition: { duration: 0.2 } });
-      eyeOn.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+      // hidden → visible: slash fades, eyes crossfade back
+      slash.start({
+        opacity: 0,
+        transition: { duration: 0.25, ease: "easeInOut" },
+      });
+      eyeOff.start({ opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } });
+      eyeOn.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.1 } });
+      // reset pathLength after fade so next draw starts clean
+      setTimeout(() => slash.set({ pathLength: 0 }), 300);
     }
   }, [isHidden]);
 

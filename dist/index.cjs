@@ -1751,25 +1751,29 @@ function ViewIcon({
   const slash = framerMotion.useAnimation();
   react.useEffect(() => {
     if (isHidden) {
-      eyeOn.start({ opacity: 0, transition: { duration: 0.2 } });
-      eyeOff.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+      eyeOn.start({ opacity: 0, transition: { duration: 0.35, ease: "easeInOut" } });
+      eyeOff.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.05 } });
       slash.start({
         opacity: 1,
-        pathLength: [0, 0.45, 0.45, 1],
+        pathLength: [0, 0.5, 1],
         transition: {
-          opacity: { duration: 0.01, delay: 0.1 },
+          opacity: { duration: 0.01, delay: 0.05 },
           pathLength: {
-            duration: 0.65,
-            delay: 0.12,
-            times: [0, 0.38, 0.62, 1],
-            ease: "easeInOut"
+            duration: 0.75,
+            delay: 0.05,
+            times: [0, 0.32, 1],
+            ease: ["easeIn", [0.15, 0, 0.4, 1]]
           }
         }
       });
     } else {
-      slash.start({ opacity: 0, pathLength: 0, transition: { duration: 0.15 } });
-      eyeOff.start({ opacity: 0, transition: { duration: 0.2 } });
-      eyeOn.start({ opacity: 1, transition: { duration: 0.25, delay: 0.1 } });
+      slash.start({
+        opacity: 0,
+        transition: { duration: 0.25, ease: "easeInOut" }
+      });
+      eyeOff.start({ opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } });
+      eyeOn.start({ opacity: 1, transition: { duration: 0.35, ease: "easeInOut", delay: 0.1 } });
+      setTimeout(() => slash.set({ pathLength: 0 }), 300);
     }
   }, [isHidden]);
   const handleClick = (e) => {
