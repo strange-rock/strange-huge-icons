@@ -64,6 +64,8 @@ declare function SearchOneIcon({ size, color, animated, triggered, ...props }: I
 
 declare function MoreHorizontalIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
+declare function MoreVerticalIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
 declare function FolderAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
 interface FolderOneIconProps extends IconProps {
@@ -83,6 +85,50 @@ declare function ArrowUpTwoIcon({ size, color, animated, triggered, ...props }: 
 
 declare function CancelOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
+declare function CancelCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function ArrowRightThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function ArrowLeftFourIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function GalaxyIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function FolderThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function BubbleChatEditIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function TextIndentIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function FilterMailIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function ViewOffSlashIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function SourceCodeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function TestTubeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function BrushIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function CalendarThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function StickyNoteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function QuillWriteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function QuillWriteOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function WorkflowSquareTenIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function DownloadOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function CursorCircleSelectionTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function LoadingOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function BookmarkTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function CircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
 declare function ExchangeOneIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
 declare function StarIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
@@ -100,4 +146,4 @@ interface ViewIconProps extends IconProps {
 }
 declare function ViewIcon({ size, color, animated: _animated, triggered: _triggered, variant, onClick, ...props }: ViewIconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BubbleChatAddIcon, BubbleChatIcon, CancelOneIcon, ChatOneIcon, ExchangeOneIcon, FolderAddIcon, FolderOneIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeSquareIcon, StarIcon, StopCircleIcon, TextIcon, UserAiIcon, UserIcon, ViewIcon };
+export { AbacusIcon, AiVisionRecognitionIcon, ArrowDownOneIcon, ArrowLeftFourIcon, ArrowRightThreeIcon, ArrowUpTwoIcon, AtomOneIcon, AudioWaveOneIcon, BookmarkTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CircleIcon, CursorCircleSelectionTwoIcon, DownloadOneIcon, ExchangeOneIcon, FilterMailIcon, FolderAddIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, LoadingOneIcon, LogoIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, SearchOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, UserAiIcon, UserIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
