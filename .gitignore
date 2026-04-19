@@ -2,3 +2,8 @@ node_modules/
 .DS_Store
 *.log
 .vercel
+
+# Figma-only asset exports — not part of the published library
+llm-icons/
+llm-icons-mono/
+llm-icons-avatar/

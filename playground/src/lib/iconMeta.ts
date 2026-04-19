@@ -42,6 +42,11 @@ export const VARIANTS: Record<string, string[]> = {
   ViewIcon:         ["visible", "hidden"],
 };
 
+/** Icons that belong to the LLM category. Add names here as you create them. */
+export const LLM_ICONS: string[] = [
+  // e.g. "AiVisionRecognitionIcon",
+];
+
 /** Per-icon stage background override — used for icons with hardcoded colors. */
 export const STAGE_BG: Record<string, string> = {
   FolderOneIcon: "#1E1511",

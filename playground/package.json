@@ -8,11 +8,13 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@lobehub/icons": "^5.4.0",
     "framer-motion": "^11.0.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
   },
   "devDependencies": {
+    "@lobehub/icons-static-svg": "^1.86.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",

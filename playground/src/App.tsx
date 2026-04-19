@@ -2,9 +2,13 @@ import { useState, useMemo } from "react";
 import * as Icons from "@strange-huge/icons";
 import type { IconProps } from "@strange-huge/icons";
 import { IconCard } from "./components/IconCard";
+import { LlmGrid } from "./components/LlmGrid";
 import { PreviewModal } from "./components/PreviewModal";
+import toc from "@lobehub/icons/es/toc";
+import { LLM_ICONS } from "./lib/iconMeta";
 
 type IconComponent = React.ComponentType<IconProps>;
+type Tab = "all" | "llm";
 
 const allIcons = Object.entries(Icons).filter(
   ([, v]) => typeof v === "function"
@@ -15,12 +19,16 @@ export default function App() {
   const [activeColor, setActiveColor] = useState("#ffffff");
   const [activeSize, setActiveSize] = useState(24);
   const [selected, setSelected] = useState<[string, IconComponent] | null>(null);
+  const [activeTab, setActiveTab] = useState<Tab>("all");
 
   const filtered = useMemo(() => {
+    const base = activeTab === "llm"
+      ? allIcons.filter(([name]) => LLM_ICONS.includes(name))
+      : allIcons;
     const q = search.toLowerCase().trim();
-    if (!q) return allIcons;
-    return allIcons.filter(([name]) => name.toLowerCase().includes(q));
-  }, [search]);
+    if (!q) return base;
+    return base.filter(([name]) => name.toLowerCase().includes(q));
+  }, [search, activeTab]);
 
   return (
     <div style={s.root}>
@@ -36,6 +44,25 @@ export default function App() {
           <span style={s.version}>v0.0.1</span>
         </div>
       </header>
+
+      {/* ── Tabs ── */}
+      <div style={s.tabBar}>
+        {(["all", "llm"] as Tab[]).map((tab) => (
+          <button
+            key={tab}
+            style={{ ...s.tab, ...(activeTab === tab ? s.tabActive : {}) }}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab === "all" ? "All" : "LLM"}
+            {tab === "llm" && (
+              <span style={s.tabCount}>{(toc as any[]).filter((t: any) => t.param.hasAvatar).length}</span>
+            )}
+            {tab === "all" && (
+              <span style={s.tabCount}>{allIcons.length}</span>
+            )}
+          </button>
+        ))}
+      </div>
 
       {/* ── Controls bar ── */}
       <div style={s.controlsBar}>
@@ -80,31 +107,37 @@ export default function App() {
         </div>
       </div>
 
-      {/* ── Grid header ── */}
-      <div style={s.gridHeader}>
-        <span style={s.gridLabel}>
-          {search
-            ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${search}"`
-            : `All icons · ${allIcons.length}`}
-        </span>
-      </div>
-
-      {/* ── Grid ── */}
-      {filtered.length === 0 ? (
-        <div style={s.empty}>No icons match "{search}"</div>
+      {activeTab === "llm" ? (
+        <LlmGrid search={search} size={activeSize} />
       ) : (
-        <div style={s.grid}>
-          {filtered.map(([name, Component]) => (
-            <IconCard
-              key={name}
-              name={name}
-              Component={Component}
-              color={activeColor}
-              size={activeSize}
-              onSelect={() => setSelected([name, Component])}
-            />
-          ))}
-        </div>
+        <>
+          {/* ── Grid header ── */}
+          <div style={s.gridHeader}>
+            <span style={s.gridLabel}>
+              {search
+                ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${search}"`
+                : `All icons · ${allIcons.length}`}
+            </span>
+          </div>
+
+          {/* ── Grid ── */}
+          {filtered.length === 0 ? (
+            <div style={s.empty}>No icons match "{search}"</div>
+          ) : (
+            <div style={s.grid}>
+              {filtered.map(([name, Component]) => (
+                <IconCard
+                  key={name}
+                  name={name}
+                  Component={Component}
+                  color={activeColor}
+                  size={activeSize}
+                  onSelect={() => setSelected([name, Component])}
+                />
+              ))}
+            </div>
+          )}
+        </>
       )}
 
       {/* ── Preview modal ── */}
@@ -160,6 +193,39 @@ const s: Record<string, React.CSSProperties> = {
     gap: 16,
   },
   version: {
+    fontSize: 11,
+    color: "#333",
+    fontFamily: "monospace",
+  },
+
+  // Tabs
+  tabBar: {
+    display: "flex",
+    alignItems: "center",
+    gap: 4,
+    padding: "0 24px",
+    borderBottom: "1px solid #161616",
+  },
+  tab: {
+    display: "flex",
+    alignItems: "center",
+    gap: 6,
+    padding: "10px 12px",
+    fontSize: 13,
+    fontWeight: 500,
+    color: "#444",
+    background: "none",
+    border: "none",
+    borderBottom: "2px solid transparent",
+    marginBottom: -1,
+    cursor: "pointer",
+    transition: "color 150ms ease",
+  },
+  tabActive: {
+    color: "#fff",
+    borderBottomColor: "#fff",
+  },
+  tabCount: {
     fontSize: 11,
     color: "#333",
     fontFamily: "monospace",
