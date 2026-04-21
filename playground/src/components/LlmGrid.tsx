@@ -97,7 +97,7 @@ export function LlmGrid({ search, size }: LlmGridProps) {
                 onMouseEnter={() => setHovered(entry.id)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <IconComponent size={size} />
+                <IconComponent size={size} {...(isAvatar ? { shape: "square" } : {})} />
                 <span style={s.label}>{entry.fullTitle}</span>
               </div>
             );
