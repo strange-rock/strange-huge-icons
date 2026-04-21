@@ -28,7 +28,7 @@ export function LlmIcon({ id, size = 24, variant = "color", className, style, al
         height={size}
         alt={alt ?? id}
         className={className}
-        style={{ display: "inline-block", borderRadius: "50%", ...style }}
+        style={{ display: "inline-block", ...style }}
       />
     );
   }
