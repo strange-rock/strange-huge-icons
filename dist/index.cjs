@@ -1725,7 +1725,7 @@ function CancelCircleIcon({
     }
   );
 }
-function ArrowRightThreeIcon({
+function ArrowRightOneIcon({
   size = 24,
   color = "currentColor",
   animated: _animated,
@@ -1733,7 +1733,7 @@ function ArrowRightThreeIcon({
   onClick,
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntime.jsxs(
+  return /* @__PURE__ */ jsxRuntime.jsx(
     framerMotion.motion.svg,
     {
       xmlns: "http://www.w3.org/2000/svg",
@@ -1743,11 +1743,47 @@ function ArrowRightThreeIcon({
       fill: "none",
       onClick,
       ...props,
-      children: [
-        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M20.0001 18L20.0001 6", stroke: color, strokeWidth: "1.5", strokeLinecap: "round" }),
-        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M16.0001 11.9995L4.00012 11.9995", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }),
-        /* @__PURE__ */ jsxRuntime.jsx("path", { d: "M12.0002 8C12.0002 8 16.0001 10.946 16.0001 12C16.0001 13.0541 12.0001 16 12.0001 16", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })
-      ]
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        "path",
+        {
+          d: "M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round"
+        }
+      )
+    }
+  );
+}
+function ArrowLeftOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        "path",
+        {
+          d: "M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round"
+        }
+      )
     }
   );
 }
@@ -3659,7 +3695,8 @@ exports.AiVisionRecognitionIcon = AiVisionRecognitionIcon;
 exports.AiWebBrowsingIcon = AiWebBrowsingIcon;
 exports.AnonymousIcon = AnonymousIcon;
 exports.ArrowDownOneIcon = ArrowDownOneIcon;
-exports.ArrowRightThreeIcon = ArrowRightThreeIcon;
+exports.ArrowLeftOneIcon = ArrowLeftOneIcon;
+exports.ArrowRightOneIcon = ArrowRightOneIcon;
 exports.ArrowUpDownIcon = ArrowUpDownIcon;
 exports.ArrowUpTwoIcon = ArrowUpTwoIcon;
 exports.AtomOneIcon = AtomOneIcon;
