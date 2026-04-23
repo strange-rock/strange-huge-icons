@@ -28,7 +28,6 @@ export { ArrowUpTwoIcon } from "./ArrowUpTwoIcon";
 export { CancelOneIcon } from "./CancelOneIcon";
 export { CancelCircleIcon } from "./CancelCircleIcon";
 export { ArrowRightThreeIcon } from "./ArrowRightThreeIcon";
-export { ArrowLeftFourIcon } from "./ArrowLeftFourIcon";
 export { GalaxyIcon } from "./GalaxyIcon";
 export { FolderThreeIcon } from "./FolderThreeIcon";
 export { BubbleChatEditIcon } from "./BubbleChatEditIcon";
