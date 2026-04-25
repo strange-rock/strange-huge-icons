@@ -77,3 +77,4 @@ export { DownloadThreeIcon } from "./DownloadThreeIcon";
 export { ArrowUpDownIcon } from "./ArrowUpDownIcon";
 export { InputShortTextIcon } from "./InputShortTextIcon";
 export { MessagePreviewOneIcon } from "./MessagePreviewOneIcon";
+export { UnfoldLessIcon } from "./UnfoldLessIcon";
