@@ -3731,6 +3731,154 @@ function UnfoldLessIcon({
     }
   );
 }
+function TickOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        "path",
+        {
+          d: "M5 14.5C5 14.5 6.5 14.5 8.5 18C8.5 18 14.0588 8.83333 19 7",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round"
+        }
+      )
+    }
+  );
+}
+function ShapesOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M13.3382 10H10.6618C9.1273 10 8.36006 10 8.08543 9.49297C7.8108 8.98594 8.21743 8.32019 9.0307 6.9887L10.3689 4.79773C11.101 3.59924 11.467 3 12 3C12.533 3 12.899 3.59924 13.6311 4.79773L14.9693 6.9887C15.7826 8.32019 16.1892 8.98594 15.9146 9.49297C15.6399 10 14.8727 10 13.3382 10Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "circle",
+          {
+            cx: "17.5",
+            cy: "17.5",
+            r: "3.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M9.66294 20.1111C10 19.6067 10 18.9045 10 17.5C10 16.0955 10 15.3933 9.66294 14.8889C9.51702 14.6705 9.32952 14.483 9.11114 14.3371C8.60669 14 7.90446 14 6.5 14C5.09554 14 4.39331 14 3.88886 14.3371C3.67048 14.483 3.48298 14.6705 3.33706 14.8889C3 15.3933 3 16.0955 3 17.5C3 18.9045 3 19.6067 3.33706 20.1111C3.48298 20.3295 3.67048 20.517 3.88886 20.6629C4.39331 21 5.09554 21 6.5 21C7.90446 21 8.60669 21 9.11114 20.6629C9.32952 20.517 9.51702 20.3295 9.66294 20.1111Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function DashboardSquareOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M13.6903 19.4567C13.5 18.9973 13.5 18.4149 13.5 17.25C13.5 16.0851 13.5 15.5027 13.6903 15.0433C13.944 14.4307 14.4307 13.944 15.0433 13.6903C15.5027 13.5 16.0851 13.5 17.25 13.5C18.4149 13.5 18.9973 13.5 19.4567 13.6903C20.0693 13.944 20.556 14.4307 20.8097 15.0433C21 15.5027 21 16.0851 21 17.25C21 18.4149 21 18.9973 20.8097 19.4567C20.556 20.0693 20.0693 20.556 19.4567 20.8097C18.9973 21 18.4149 21 17.25 21C16.0851 21 15.5027 21 15.0433 20.8097C14.4307 20.556 13.944 20.0693 13.6903 19.4567Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "square",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M13.6903 8.95671C13.5 8.49728 13.5 7.91485 13.5 6.75C13.5 5.58515 13.5 5.00272 13.6903 4.54329C13.944 3.93072 14.4307 3.44404 15.0433 3.1903C15.5027 3 16.0851 3 17.25 3C18.4149 3 18.9973 3 19.4567 3.1903C20.0693 3.44404 20.556 3.93072 20.8097 4.54329C21 5.00272 21 5.58515 21 6.75C21 7.91485 21 8.49728 20.8097 8.95671C20.556 9.56928 20.0693 10.056 19.4567 10.3097C18.9973 10.5 18.4149 10.5 17.25 10.5C16.0851 10.5 15.5027 10.5 15.0433 10.3097C14.4307 10.056 13.944 9.56928 13.6903 8.95671Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "square",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M3.1903 19.4567C3 18.9973 3 18.4149 3 17.25C3 16.0851 3 15.5027 3.1903 15.0433C3.44404 14.4307 3.93072 13.944 4.54329 13.6903C5.00272 13.5 5.58515 13.5 6.75 13.5C7.91485 13.5 8.49728 13.5 8.95671 13.6903C9.56928 13.944 10.056 14.4307 10.3097 15.0433C10.5 15.5027 10.5 16.0851 10.5 17.25C10.5 18.4149 10.5 18.9973 10.3097 19.4567C10.056 20.0693 9.56928 20.556 8.95671 20.8097C8.49728 21 7.91485 21 6.75 21C5.58515 21 5.00272 21 4.54329 20.8097C3.93072 20.556 3.44404 20.0693 3.1903 19.4567Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "square",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M3.1903 8.95671C3 8.49728 3 7.91485 3 6.75C3 5.58515 3 5.00272 3.1903 4.54329C3.44404 3.93072 3.93072 3.44404 4.54329 3.1903C5.00272 3 5.58515 3 6.75 3C7.91485 3 8.49728 3 8.95671 3.1903C9.56928 3.44404 10.056 3.93072 10.3097 4.54329C10.5 5.00272 10.5 5.58515 10.5 6.75C10.5 7.91485 10.5 8.49728 10.3097 8.95671C10.056 9.56928 9.56928 10.056 8.95671 10.3097C8.49728 10.5 7.91485 10.5 6.75 10.5C5.58515 10.5 5.00272 10.5 4.54329 10.3097C3.93072 10.056 3.44404 9.56928 3.1903 8.95671Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "square",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
 
 exports.AbacusIcon = AbacusIcon;
 exports.AiViewIcon = AiViewIcon;
@@ -3761,6 +3909,7 @@ exports.ChatOneIcon = ChatOneIcon;
 exports.CircleIcon = CircleIcon;
 exports.CopyOneIcon = CopyOneIcon;
 exports.CursorCircleSelectionTwoIcon = CursorCircleSelectionTwoIcon;
+exports.DashboardSquareOneIcon = DashboardSquareOneIcon;
 exports.DownloadOneIcon = DownloadOneIcon;
 exports.DownloadThreeIcon = DownloadThreeIcon;
 exports.ExchangeOneIcon = ExchangeOneIcon;
@@ -3791,6 +3940,7 @@ exports.QuillWriteTwoIcon = QuillWriteTwoIcon;
 exports.RadarThreeIcon = RadarThreeIcon;
 exports.RedoIcon = RedoIcon;
 exports.SearchOneIcon = SearchOneIcon;
+exports.ShapesOneIcon = ShapesOneIcon;
 exports.ShareOneIcon = ShareOneIcon;
 exports.SidebarLeftIcon = SidebarLeftIcon;
 exports.SidebarRightIcon = SidebarRightIcon;
@@ -3804,6 +3954,7 @@ exports.TextIcon = TextIcon;
 exports.TextIndentIcon = TextIndentIcon;
 exports.ThumbsDownIcon = ThumbsDownIcon;
 exports.ThumbsUpIcon = ThumbsUpIcon;
+exports.TickOneIcon = TickOneIcon;
 exports.TokenCircleIcon = TokenCircleIcon;
 exports.TokenSquareIcon = TokenSquareIcon;
 exports.UnfoldLessIcon = UnfoldLessIcon;
