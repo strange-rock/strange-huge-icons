@@ -3846,7 +3846,207 @@ function DashboardSquareOneIcon({
     }
   );
 }
+function DragDropVerticalIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M16 6C16 6.55228 15.5523 7 15 7C14.4477 7 14 6.55228 14 6C14 5.44772 14.4477 5 15 5C15.5523 5 16 5.44772 16 6Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M10 6C10 6.55228 9.55228 7 9 7C8.44772 7 8 6.55228 8 6C8 5.44772 8.44772 5 9 5C9.55228 5 10 5.44772 10 6Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M16 18C16 18.5523 15.5523 19 15 19C14.4477 19 14 18.5523 14 18C14 17.4477 14.4477 17 15 17C15.5523 17 16 17.4477 16 18Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M16 12C16 12.5523 15.5523 13 15 13C14.4477 13 14 12.5523 14 12C14 11.4477 14.4477 11 15 11C15.5523 11 16 11.4477 16 12Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M10 18C10 18.5523 9.55228 19 9 19C8.44772 19 8 18.5523 8 18C8 17.4477 8.44772 17 9 17C9.55228 17 10 17.4477 10 18Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M10 12C10 12.5523 9.55228 13 9 13C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11C9.55228 11 10 11.4477 10 12Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function TickTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsx(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: /* @__PURE__ */ jsx(
+        "path",
+        {
+          d: "M5 14L8.5 17.5L19 6.5",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round"
+        }
+      )
+    }
+  );
+}
+function ArrowRightTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M18.5 12L4.99997 12",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M13 18C13 18 19 13.5811 19 12C19 10.4188 13 6 13 6",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function PenOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M3.49977 18.9853V20.5H5.01449C6.24074 20.5 6.85387 20.5 7.40518 20.2716C7.9565 20.0433 8.39004 19.6097 9.25713 18.7426L19.1211 8.87868C20.0037 7.99612 20.4449 7.55483 20.4937 7.01325C20.5018 6.92372 20.5018 6.83364 20.4937 6.74411C20.4449 6.20253 20.0037 5.76124 19.1211 4.87868C18.2385 3.99612 17.7972 3.55483 17.2557 3.50605C17.1661 3.49798 17.0761 3.49798 16.9865 3.50605C16.4449 3.55483 16.0037 3.99612 15.1211 4.87868L5.25713 14.7426C4.39004 15.6097 3.9565 16.0433 3.72813 16.5946C3.49977 17.1459 3.49977 17.759 3.49977 18.9853Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M13.5 6.5L17.5 10.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
 
-export { AbacusIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AnonymousIcon, ArrowDownOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowUpDownIcon, ArrowUpTwoIcon, AtomOneIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BrainTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CircleIcon, CopyOneIcon, CursorCircleSelectionTwoIcon, DashboardSquareOneIcon, DownloadOneIcon, DownloadThreeIcon, ExchangeOneIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InputShortTextIcon, LaurelWreathOneIcon, LoadingOneIcon, LogoIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PinIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, SearchOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TokenCircleIcon, TokenSquareIcon, UnfoldLessIcon, UserAiIcon, UserIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
+export { AbacusIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AnonymousIcon, ArrowDownOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowUpDownIcon, ArrowUpTwoIcon, AtomOneIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BrainTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CircleIcon, CopyOneIcon, CursorCircleSelectionTwoIcon, DashboardSquareOneIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InputShortTextIcon, LaurelWreathOneIcon, LoadingOneIcon, LogoIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PenOneIcon, PinIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, SearchOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UnfoldLessIcon, UserAiIcon, UserIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

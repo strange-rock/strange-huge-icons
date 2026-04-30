@@ -79,3 +79,7 @@ export { InputShortTextIcon } from "./InputShortTextIcon";
 export { MessagePreviewOneIcon } from "./MessagePreviewOneIcon";
 export { UnfoldLessIcon } from "./UnfoldLessIcon";export { ShapesOneIcon } from "./ShapesOneIcon";
 export { DashboardSquareOneIcon } from "./DashboardSquareOneIcon";
+export { DragDropVerticalIcon } from "./DragDropVerticalIcon";
+export { TickTwoIcon } from "./TickTwoIcon";
+export { ArrowRightTwoIcon } from "./ArrowRightTwoIcon";
+export { PenOneIcon } from "./PenOneIcon";
