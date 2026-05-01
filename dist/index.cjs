@@ -3962,6 +3962,48 @@ function TickTwoIcon({
     }
   );
 }
+function TickTwoAnimatedIcon({
+  size = 24,
+  color = "currentColor",
+  animated,
+  triggered,
+  onClick,
+  ...props
+}) {
+  const useTrigger = triggered !== void 0;
+  const isOn = useTrigger ? triggered : false;
+  const drawTransition = { duration: 0.08, ease: "easeOut" };
+  const eraseTransition = { duration: 0.04, ease: "easeIn" };
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      initial: "off",
+      animate: useTrigger ? isOn ? "on" : "off" : void 0,
+      whileHover: !useTrigger && animated ? "on" : void 0,
+      ...props,
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        framerMotion.motion.path,
+        {
+          d: "M5 14L8.5 17.5L19 6.5",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          variants: {
+            off: { pathLength: 0, transition: eraseTransition },
+            on: { pathLength: 1, transition: drawTransition }
+          }
+        }
+      )
+    }
+  );
+}
 function ArrowRightTwoIcon({
   size = 24,
   color = "currentColor",
@@ -4126,6 +4168,7 @@ exports.TextIcon = TextIcon;
 exports.TextIndentIcon = TextIndentIcon;
 exports.ThumbsDownIcon = ThumbsDownIcon;
 exports.ThumbsUpIcon = ThumbsUpIcon;
+exports.TickTwoAnimatedIcon = TickTwoAnimatedIcon;
 exports.TickTwoIcon = TickTwoIcon;
 exports.TokenCircleIcon = TokenCircleIcon;
 exports.TokenSquareIcon = TokenSquareIcon;
