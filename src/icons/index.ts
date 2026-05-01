@@ -81,6 +81,5 @@ export { UnfoldLessIcon } from "./UnfoldLessIcon";export { ShapesOneIcon } from 
 export { DashboardSquareOneIcon } from "./DashboardSquareOneIcon";
 export { DragDropVerticalIcon } from "./DragDropVerticalIcon";
 export { TickTwoIcon } from "./TickTwoIcon";
-export { TickTwoAnimatedIcon } from "./TickTwoAnimatedIcon";
 export { ArrowRightTwoIcon } from "./ArrowRightTwoIcon";
 export { PenOneIcon } from "./PenOneIcon";

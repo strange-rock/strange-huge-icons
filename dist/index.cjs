@@ -3934,46 +3934,30 @@ function DragDropVerticalIcon({
 function TickTwoIcon({
   size = 24,
   color = "currentColor",
-  animated: _animated,
-  triggered: _triggered,
-  onClick,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntime.jsx(
-    framerMotion.motion.svg,
-    {
-      xmlns: "http://www.w3.org/2000/svg",
-      width: size,
-      height: size,
-      viewBox: "0 0 24 24",
-      fill: "none",
-      onClick,
-      ...props,
-      children: /* @__PURE__ */ jsxRuntime.jsx(
-        "path",
-        {
-          d: "M5 14L8.5 17.5L19 6.5",
-          stroke: color,
-          strokeWidth: "1.5",
-          strokeLinecap: "round",
-          strokeLinejoin: "round"
-        }
-      )
-    }
-  );
-}
-function TickTwoAnimatedIcon({
-  size = 24,
-  color = "currentColor",
-  animated,
+  animated = false,
   triggered,
   onClick,
   ...props
 }) {
-  const useTrigger = triggered !== void 0;
-  const isOn = useTrigger ? triggered : false;
-  const drawTransition = { duration: 0.08, ease: "easeOut" };
-  const eraseTransition = { duration: 0.04, ease: "easeIn" };
+  const [hovered, setHovered] = react.useState(false);
+  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const isInteractive = animated || triggered !== void 0;
+  const controls = framerMotion.useAnimation();
+  react.useEffect(() => {
+    if (!isInteractive) return;
+    if (isActive) {
+      controls.set({ pathLength: 0 });
+      controls.start({
+        pathLength: 1,
+        transition: { duration: 0.08, ease: "easeOut" }
+      });
+    } else {
+      controls.start({
+        pathLength: 0,
+        transition: { duration: 0.04, ease: "easeIn" }
+      });
+    }
+  }, [isActive, isInteractive]);
   return /* @__PURE__ */ jsxRuntime.jsx(
     framerMotion.motion.svg,
     {
@@ -3983,9 +3967,9 @@ function TickTwoAnimatedIcon({
       viewBox: "0 0 24 24",
       fill: "none",
       onClick,
-      initial: "off",
-      animate: useTrigger ? isOn ? "on" : "off" : void 0,
-      whileHover: !useTrigger && animated ? "on" : void 0,
+      onHoverStart: () => setHovered(true),
+      onHoverEnd: () => setHovered(false),
+      style: isInteractive ? { cursor: "pointer" } : void 0,
       ...props,
       children: /* @__PURE__ */ jsxRuntime.jsx(
         framerMotion.motion.path,
@@ -3995,10 +3979,7 @@ function TickTwoAnimatedIcon({
           strokeWidth: "1.5",
           strokeLinecap: "round",
           strokeLinejoin: "round",
-          variants: {
-            off: { pathLength: 0, transition: eraseTransition },
-            on: { pathLength: 1, transition: drawTransition }
-          }
+          animate: isInteractive ? controls : void 0
         }
       )
     }
@@ -4168,7 +4149,6 @@ exports.TextIcon = TextIcon;
 exports.TextIndentIcon = TextIndentIcon;
 exports.ThumbsDownIcon = ThumbsDownIcon;
 exports.ThumbsUpIcon = ThumbsUpIcon;
-exports.TickTwoAnimatedIcon = TickTwoAnimatedIcon;
 exports.TickTwoIcon = TickTwoIcon;
 exports.TokenCircleIcon = TokenCircleIcon;
 exports.TokenSquareIcon = TokenSquareIcon;
