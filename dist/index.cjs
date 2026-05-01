@@ -3939,12 +3939,18 @@ function TickTwoIcon({
   onClick,
   ...props
 }) {
-  const [hovered, setHovered] = react.useState(false);
-  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const [clicked, setClicked] = react.useState(false);
   const isInteractive = animated || triggered !== void 0;
+  const isActive = triggered !== void 0 ? triggered : animated ? clicked : false;
   const controls = framerMotion.useAnimation();
+  const hasMounted = react.useRef(false);
   react.useEffect(() => {
     if (!isInteractive) return;
+    if (!hasMounted.current) {
+      controls.set({ pathLength: isActive ? 1 : 0 });
+      hasMounted.current = true;
+      return;
+    }
     if (isActive) {
       controls.set({ pathLength: 0 });
       controls.start({
@@ -3966,9 +3972,10 @@ function TickTwoIcon({
       height: size,
       viewBox: "0 0 24 24",
       fill: "none",
-      onClick,
-      onHoverStart: () => setHovered(true),
-      onHoverEnd: () => setHovered(false),
+      onClick: (e) => {
+        if (animated && triggered === void 0) setClicked((c) => !c);
+        onClick?.(e);
+      },
       style: isInteractive ? { cursor: "pointer" } : void 0,
       ...props,
       children: /* @__PURE__ */ jsxRuntime.jsx(

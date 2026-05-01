@@ -1,5 +1,5 @@
 import { useAnimation, motion } from 'framer-motion';
-import { useState, useEffect, useId } from 'react';
+import { useState, useEffect, useId, useRef } from 'react';
 import { jsxs, jsx } from 'react/jsx-runtime';
 
 // src/icons/BubbleChatAddIcon.tsx
@@ -3937,12 +3937,18 @@ function TickTwoIcon({
   onClick,
   ...props
 }) {
-  const [hovered, setHovered] = useState(false);
-  const isActive = triggered !== void 0 ? triggered : animated ? hovered : false;
+  const [clicked, setClicked] = useState(false);
   const isInteractive = animated || triggered !== void 0;
+  const isActive = triggered !== void 0 ? triggered : animated ? clicked : false;
   const controls = useAnimation();
+  const hasMounted = useRef(false);
   useEffect(() => {
     if (!isInteractive) return;
+    if (!hasMounted.current) {
+      controls.set({ pathLength: isActive ? 1 : 0 });
+      hasMounted.current = true;
+      return;
+    }
     if (isActive) {
       controls.set({ pathLength: 0 });
       controls.start({
@@ -3964,9 +3970,10 @@ function TickTwoIcon({
       height: size,
       viewBox: "0 0 24 24",
       fill: "none",
-      onClick,
-      onHoverStart: () => setHovered(true),
-      onHoverEnd: () => setHovered(false),
+      onClick: (e) => {
+        if (animated && triggered === void 0) setClicked((c) => !c);
+        onClick?.(e);
+      },
       style: isInteractive ? { cursor: "pointer" } : void 0,
       ...props,
       children: /* @__PURE__ */ jsx(

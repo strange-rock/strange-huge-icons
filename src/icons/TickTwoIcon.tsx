@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { IconProps } from "../types";
 
 export function TickTwoIcon({
@@ -10,14 +10,19 @@ export function TickTwoIcon({
   onClick,
   ...props
 }: IconProps) {
-  const [hovered, setHovered] = useState(false);
-  const isActive =
-    triggered !== undefined ? triggered : animated ? hovered : false;
+  const [clicked, setClicked] = useState(false);
   const isInteractive = animated || triggered !== undefined;
+  const isActive = triggered !== undefined ? triggered : animated ? clicked : false;
   const controls = useAnimation();
+  const hasMounted = useRef(false);
 
   useEffect(() => {
     if (!isInteractive) return;
+    if (!hasMounted.current) {
+      controls.set({ pathLength: isActive ? 1 : 0 });
+      hasMounted.current = true;
+      return;
+    }
     if (isActive) {
       controls.set({ pathLength: 0 });
       controls.start({
@@ -39,9 +44,10 @@ export function TickTwoIcon({
       height={size}
       viewBox="0 0 24 24"
       fill="none"
-      onClick={onClick}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
+      onClick={(e) => {
+        if (animated && triggered === undefined) setClicked((c) => !c);
+        onClick?.(e);
+      }}
       style={isInteractive ? { cursor: "pointer" } : undefined}
       {...props}
     >
