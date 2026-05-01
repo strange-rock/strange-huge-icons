@@ -46,7 +46,7 @@ export function TickTwoIcon({
       fill="none"
       onClick={(e) => {
         if (animated && triggered === undefined) setClicked((c) => !c);
-        onClick?.(e);
+        if (typeof onClick === "function") onClick(e);
       }}
       style={isInteractive ? { cursor: "pointer" } : undefined}
       {...props}
