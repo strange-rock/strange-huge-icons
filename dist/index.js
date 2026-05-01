@@ -3937,31 +3937,38 @@ function TickTwoIcon({
   onClick,
   ...props
 }) {
-  const [clicked, setClicked] = useState(false);
   const isInteractive = animated || triggered !== void 0;
-  const isActive = triggered !== void 0 ? triggered : animated ? clicked : false;
   const controls = useAnimation();
   const hasMounted = useRef(false);
   useEffect(() => {
     if (!isInteractive) return;
     if (!hasMounted.current) {
-      controls.set({ pathLength: isActive ? 1 : 0 });
+      controls.set({ pathLength: 1 });
       hasMounted.current = true;
       return;
     }
-    if (isActive) {
-      controls.set({ pathLength: 0 });
-      controls.start({
-        pathLength: 1,
-        transition: { duration: 0.08, ease: "easeOut" }
-      });
-    } else {
-      controls.start({
-        pathLength: 0,
-        transition: { duration: 0.04, ease: "easeIn" }
-      });
+    if (triggered !== void 0) {
+      if (triggered) {
+        controls.set({ pathLength: 0 });
+        controls.start({
+          pathLength: 1,
+          transition: { duration: 0.08, ease: "easeOut" }
+        });
+      } else {
+        controls.start({
+          pathLength: 0,
+          transition: { duration: 0.04, ease: "easeIn" }
+        });
+      }
     }
-  }, [isActive, isInteractive]);
+  }, [triggered, isInteractive]);
+  const replay = () => {
+    controls.set({ pathLength: 0 });
+    controls.start({
+      pathLength: 1,
+      transition: { duration: 0.08, ease: "easeOut" }
+    });
+  };
   return /* @__PURE__ */ jsx(
     motion.svg,
     {
@@ -3971,7 +3978,7 @@ function TickTwoIcon({
       viewBox: "0 0 24 24",
       fill: "none",
       onClick: (e) => {
-        if (animated && triggered === void 0) setClicked((c) => !c);
+        if (animated && triggered === void 0) replay();
         if (typeof onClick === "function") onClick(e);
       },
       style: isInteractive ? { cursor: "pointer" } : void 0,

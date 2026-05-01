@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import type { IconProps } from "../types";
 
 export function TickTwoIcon({
@@ -10,32 +10,40 @@ export function TickTwoIcon({
   onClick,
   ...props
 }: IconProps) {
-  const [clicked, setClicked] = useState(false);
   const isInteractive = animated || triggered !== undefined;
-  const isActive = triggered !== undefined ? triggered : animated ? clicked : false;
   const controls = useAnimation();
   const hasMounted = useRef(false);
 
   useEffect(() => {
     if (!isInteractive) return;
     if (!hasMounted.current) {
-      controls.set({ pathLength: isActive ? 1 : 0 });
+      controls.set({ pathLength: 1 });
       hasMounted.current = true;
       return;
     }
-    if (isActive) {
-      controls.set({ pathLength: 0 });
-      controls.start({
-        pathLength: 1,
-        transition: { duration: 0.08, ease: "easeOut" },
-      });
-    } else {
-      controls.start({
-        pathLength: 0,
-        transition: { duration: 0.04, ease: "easeIn" },
-      });
+    if (triggered !== undefined) {
+      if (triggered) {
+        controls.set({ pathLength: 0 });
+        controls.start({
+          pathLength: 1,
+          transition: { duration: 0.08, ease: "easeOut" },
+        });
+      } else {
+        controls.start({
+          pathLength: 0,
+          transition: { duration: 0.04, ease: "easeIn" },
+        });
+      }
     }
-  }, [isActive, isInteractive]);
+  }, [triggered, isInteractive]);
+
+  const replay = () => {
+    controls.set({ pathLength: 0 });
+    controls.start({
+      pathLength: 1,
+      transition: { duration: 0.08, ease: "easeOut" },
+    });
+  };
 
   return (
     <motion.svg
@@ -45,7 +53,7 @@ export function TickTwoIcon({
       viewBox="0 0 24 24"
       fill="none"
       onClick={(e) => {
-        if (animated && triggered === undefined) setClicked((c) => !c);
+        if (animated && triggered === undefined) replay();
         if (typeof onClick === "function") onClick(e);
       }}
       style={isInteractive ? { cursor: "pointer" } : undefined}
