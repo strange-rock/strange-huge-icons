@@ -47,6 +47,7 @@ export { DownloadOneIcon } from "./DownloadOneIcon";
 export { CursorCircleSelectionTwoIcon } from "./CursorCircleSelectionTwoIcon";
 export { LoadingOneIcon } from "./LoadingOneIcon";
 export { BookmarkTwoIcon } from "./BookmarkTwoIcon";
+export { BookmarkTwoSolidIcon } from "./BookmarkTwoSolidIcon";
 export { CircleIcon } from "./CircleIcon";
 export { ExchangeOneIcon } from "./ExchangeOneIcon";
 export { StarIcon } from "./StarIcon";
