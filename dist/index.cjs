@@ -4172,6 +4172,182 @@ function InformationCircleIcon({
     }
   );
 }
+function LinkSixIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M13.5 13V11.5C13.5 10.0955 13.5 9.39331 13.1629 8.88886C13.017 8.67048 12.8295 8.48298 12.6111 8.33706C12.1705 8.04261 11.5789 8.00539 10.5 8.00068C10.3439 8 10.1775 8 10 8C8.59554 8 7.89331 8 7.38886 8.33706C7.17048 8.48298 6.98298 8.67048 6.83706 8.88886C6.5 9.39331 6.5 10.0955 6.5 11.5V17.5C6.5 18.9045 6.5 19.6067 6.83706 20.1111C6.98298 20.3295 7.17048 20.517 7.38886 20.6629C7.89331 21 8.59554 21 10 21C11.4045 21 12.1067 21 12.6111 20.6629C12.8295 20.517 13.017 20.3295 13.1629 20.1111C13.3503 19.8307 13.4335 19.4892 13.4705 19",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M10.5 11V12.5C10.5 13.9045 10.5 14.6067 10.8371 15.1111C10.983 15.3295 11.1705 15.517 11.3889 15.6629C11.8295 15.9574 12.4211 15.9946 13.5 15.9993C13.6561 16 13.8225 16 14 16C15.4045 16 16.1067 16 16.6111 15.6629C16.8295 15.517 17.017 15.3295 17.1629 15.1111C17.5 14.6067 17.5 13.9045 17.5 12.5V6.5C17.5 5.09554 17.5 4.39331 17.1629 3.88886C17.017 3.67048 16.8295 3.48298 16.6111 3.33706C16.1067 3 15.4045 3 14 3C12.5955 3 11.8933 3 11.3889 3.33706C11.1705 3.48298 10.983 3.67048 10.8371 3.88886C10.6497 4.16925 10.5665 4.51076 10.5295 5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function ArrowUpRightOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsx(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: /* @__PURE__ */ jsxRuntime.jsx(
+        "path",
+        {
+          d: "M9 6.65032C9 6.65032 15.9383 6.10759 16.9154 7.08463C17.8924 8.06167 17.3496 15 17.3496 15M16.5 7.5L6.5 17.5",
+          stroke: color,
+          strokeWidth: "1.5",
+          strokeLinecap: "round",
+          strokeLinejoin: "round"
+        }
+      )
+    }
+  );
+}
+function DeleteTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M19.5 5.5L18.8803 15.5251C18.7219 18.0864 18.6428 19.3671 18.0008 20.2879C17.6833 20.7431 17.2747 21.1273 16.8007 21.416C15.8421 22 14.559 22 11.9927 22C9.42312 22 8.1383 22 7.17905 21.4149C6.7048 21.1257 6.296 20.7408 5.97868 20.2848C5.33688 19.3626 5.25945 18.0801 5.10461 15.5152L4.5 5.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M3 5.5H21M16.0557 5.5L15.3731 4.09173C14.9196 3.15626 14.6928 2.68852 14.3017 2.39681C14.215 2.3321 14.1231 2.27454 14.027 2.2247C13.5939 2 13.0741 2 12.0345 2C10.9688 2 10.436 2 9.99568 2.23412C9.8981 2.28601 9.80498 2.3459 9.71729 2.41317C9.32164 2.7167 9.10063 3.20155 8.65861 4.17126L8.05292 5.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M9.5 16.5L9.5 10.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M14.5 16.5L14.5 10.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function ExpandIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M19 12L19 8.99996C19 7.11435 18.9999 6.17155 18.4142 5.58577C17.8284 4.99999 16.8856 4.99999 15 5L12 5.00001",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeMiterlimit: "16",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M5 12L5.00003 15C5.00004 16.8856 5.00005 17.8284 5.58584 18.4142C6.17163 19 7.11443 19 9.00004 19L12 19",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeMiterlimit: "16",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
 
 exports.AbacusIcon = AbacusIcon;
 exports.AiViewIcon = AiViewIcon;
@@ -4183,6 +4359,7 @@ exports.ArrowLeftOneIcon = ArrowLeftOneIcon;
 exports.ArrowRightOneIcon = ArrowRightOneIcon;
 exports.ArrowRightTwoIcon = ArrowRightTwoIcon;
 exports.ArrowUpDownIcon = ArrowUpDownIcon;
+exports.ArrowUpRightOneIcon = ArrowUpRightOneIcon;
 exports.ArrowUpTwoIcon = ArrowUpTwoIcon;
 exports.AtomOneIcon = AtomOneIcon;
 exports.AuctionIcon = AuctionIcon;
@@ -4205,10 +4382,12 @@ exports.CircleIcon = CircleIcon;
 exports.CopyOneIcon = CopyOneIcon;
 exports.CursorCircleSelectionTwoIcon = CursorCircleSelectionTwoIcon;
 exports.DashboardSquareOneIcon = DashboardSquareOneIcon;
+exports.DeleteTwoIcon = DeleteTwoIcon;
 exports.DownloadOneIcon = DownloadOneIcon;
 exports.DownloadThreeIcon = DownloadThreeIcon;
 exports.DragDropVerticalIcon = DragDropVerticalIcon;
 exports.ExchangeOneIcon = ExchangeOneIcon;
+exports.ExpandIcon = ExpandIcon;
 exports.FilterMailIcon = FilterMailIcon;
 exports.FolderAddIcon = FolderAddIcon;
 exports.FolderLibraryIcon = FolderLibraryIcon;
@@ -4223,6 +4402,7 @@ exports.ImageTwoIcon = ImageTwoIcon;
 exports.InformationCircleIcon = InformationCircleIcon;
 exports.InputShortTextIcon = InputShortTextIcon;
 exports.LaurelWreathOneIcon = LaurelWreathOneIcon;
+exports.LinkSixIcon = LinkSixIcon;
 exports.LoadingOneIcon = LoadingOneIcon;
 exports.LogoIcon = LogoIcon;
 exports.MessagePreviewOneIcon = MessagePreviewOneIcon;

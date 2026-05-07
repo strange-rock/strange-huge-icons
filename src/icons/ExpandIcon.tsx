@@ -1,0 +1,40 @@
+import { motion } from "framer-motion";
+import type { IconProps } from "../types";
+
+export function ExpandIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}: IconProps) {
+  return (
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      onClick={onClick}
+      {...props}
+    >
+      <path
+        d="M19 12L19 8.99996C19 7.11435 18.9999 6.17155 18.4142 5.58577C17.8284 4.99999 16.8856 4.99999 15 5L12 5.00001"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeMiterlimit="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5 12L5.00003 15C5.00004 16.8856 5.00005 17.8284 5.58584 18.4142C6.17163 19 7.11443 19 9.00004 19L12 19"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeMiterlimit="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </motion.svg>
+  );
+}
