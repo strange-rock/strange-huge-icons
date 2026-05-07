@@ -85,3 +85,7 @@ export { TickTwoIcon } from "./TickTwoIcon";
 export { ArrowRightTwoIcon } from "./ArrowRightTwoIcon";
 export { PenOneIcon } from "./PenOneIcon";
 export { InformationCircleIcon } from "./InformationCircleIcon";
+export { LinkSixIcon } from "./LinkSixIcon";
+export { ArrowUpRightOneIcon } from "./ArrowUpRightOneIcon";
+export { DeleteTwoIcon } from "./DeleteTwoIcon";
+export { ExpandIcon } from "./ExpandIcon";
