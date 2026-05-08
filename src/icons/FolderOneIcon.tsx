@@ -3,7 +3,7 @@ import { useState } from "react";
 import type { IconProps } from "../types";
 
 interface FolderOneIconProps extends IconProps {
-  variant?: "closed" | "open";
+  variant?: "closed" | "open" | "static";
 }
 
 const CLOSED_BG =
@@ -29,6 +29,7 @@ const pathProps = {
 
 export function FolderOneIcon({
   size = 24,
+  color = "currentColor",
   animated: _animated,
   triggered: _triggered,
   onClick,
@@ -37,6 +38,27 @@ export function FolderOneIcon({
 }: FolderOneIconProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
+
+  if (variant === "static") {
+    return (
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        onClick={onClick}
+        {...props}
+      >
+        <path
+          d={CLOSED_BG}
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </motion.svg>
+    );
+  }
 
   const isOpen = variant !== undefined ? variant === "open" : internalOpen;
   const showFg = isOpen || hovered;
