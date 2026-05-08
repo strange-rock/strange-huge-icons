@@ -89,3 +89,7 @@ export { LinkSixIcon } from "./LinkSixIcon";
 export { ArrowUpRightOneIcon } from "./ArrowUpRightOneIcon";
 export { DeleteTwoIcon } from "./DeleteTwoIcon";
 export { ExpandIcon } from "./ExpandIcon";
+export { ArrowDownTwoIcon } from "./ArrowDownTwoIcon";
+export { VerticalScrollPointIcon } from "./VerticalScrollPointIcon";
+export { UserAddOneIcon } from "./UserAddOneIcon";
+export { FileAddIcon } from "./FileAddIcon";

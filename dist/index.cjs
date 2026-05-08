@@ -4348,6 +4348,198 @@ function ExpandIcon({
     }
   );
 }
+function ArrowDownTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M12 18.502V5.00195",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M18 13.002C18 13.002 13.5811 19.0019 12 19.002C10.4188 19.002 6 13.002 6 13.002",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function VerticalScrollPointIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M8 6.99997C8 6.99997 10.946 3.00001 12 3C13.0541 2.99999 16 7 16 7",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M16 17C16 17 13.054 21 12 21C10.9459 21 8 17 8 17",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function UserAddOneIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M15 8C15 5.23858 12.7614 3 10 3C7.23858 3 5 5.23858 5 8C5 10.7614 7.23858 13 10 13C12.7614 13 15 10.7614 15 8Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M17.5 21L17.5 14M14 17.5H21",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M3 20C3 16.134 6.13401 13 10 13C11.4872 13 12.8662 13.4638 14 14.2547",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function FileAddIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxRuntime.jsxs(
+    framerMotion.motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M4 12.0005L4 14.5446C4 17.7896 4 19.4122 4.88607 20.5111C5.06508 20.7331 5.26731 20.9354 5.48933 21.1144C6.58831 22.0005 8.21082 22.0005 11.4558 22.0005C12.1614 22.0005 12.5141 22.0005 12.8372 21.8865C12.9044 21.8627 12.9702 21.8355 13.0345 21.8047C13.3436 21.6569 13.593 21.4075 14.0919 20.9086L18.8284 16.172C19.4065 15.594 19.6955 15.3049 19.8478 14.9374C20 14.5699 20 14.1611 20 13.3436V10.0005C20 6.22922 20 4.34361 18.8284 3.17203C17.7693 2.11287 16.1265 2.01125 13.0345 2.0015M13 21.5005V21.0005C13 18.172 13 16.7578 13.8787 15.8791C14.7574 15.0005 16.1716 15.0005 19 15.0005H19.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntime.jsx(
+          "path",
+          {
+            d: "M12 5.99954H4M8 1.99954V9.99954",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
 
 exports.AbacusIcon = AbacusIcon;
 exports.AiViewIcon = AiViewIcon;
@@ -4355,6 +4547,7 @@ exports.AiVisionRecognitionIcon = AiVisionRecognitionIcon;
 exports.AiWebBrowsingIcon = AiWebBrowsingIcon;
 exports.AnonymousIcon = AnonymousIcon;
 exports.ArrowDownOneIcon = ArrowDownOneIcon;
+exports.ArrowDownTwoIcon = ArrowDownTwoIcon;
 exports.ArrowLeftOneIcon = ArrowLeftOneIcon;
 exports.ArrowRightOneIcon = ArrowRightOneIcon;
 exports.ArrowRightTwoIcon = ArrowRightTwoIcon;
@@ -4388,6 +4581,7 @@ exports.DownloadThreeIcon = DownloadThreeIcon;
 exports.DragDropVerticalIcon = DragDropVerticalIcon;
 exports.ExchangeOneIcon = ExchangeOneIcon;
 exports.ExpandIcon = ExpandIcon;
+exports.FileAddIcon = FileAddIcon;
 exports.FilterMailIcon = FilterMailIcon;
 exports.FolderAddIcon = FolderAddIcon;
 exports.FolderLibraryIcon = FolderLibraryIcon;
@@ -4436,8 +4630,10 @@ exports.TickTwoIcon = TickTwoIcon;
 exports.TokenCircleIcon = TokenCircleIcon;
 exports.TokenSquareIcon = TokenSquareIcon;
 exports.UnfoldLessIcon = UnfoldLessIcon;
+exports.UserAddOneIcon = UserAddOneIcon;
 exports.UserAiIcon = UserAiIcon;
 exports.UserIcon = UserIcon;
+exports.VerticalScrollPointIcon = VerticalScrollPointIcon;
 exports.ViewIcon = ViewIcon;
 exports.ViewOffSlashIcon = ViewOffSlashIcon;
 exports.WorkflowSquareTenIcon = WorkflowSquareTenIcon;
