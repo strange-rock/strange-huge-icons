@@ -38,7 +38,7 @@ export const FIGMA_NAMES: Record<string, string> = {
 export const VARIANTS: Record<string, string[]> = {
   SidebarLeftIcon:  ["close", "open"],
   SidebarRightIcon: ["close", "open"],
-  FolderOneIcon:    ["closed", "open"],
+  FolderOneIcon:    ["closed", "open", "static"],
   ViewIcon:         ["visible", "hidden"],
 };
 
