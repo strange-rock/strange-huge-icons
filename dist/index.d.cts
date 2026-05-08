@@ -69,9 +69,9 @@ declare function MoreVerticalIcon({ size, color, animated: _animated, triggered:
 declare function FolderAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
 interface FolderOneIconProps extends IconProps {
-    variant?: "closed" | "open";
+    variant?: "closed" | "open" | "static";
 }
-declare function FolderOneIcon({ size, animated: _animated, triggered: _triggered, onClick, variant, ...props }: FolderOneIconProps): react_jsx_runtime.JSX.Element;
+declare function FolderOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, variant, ...props }: FolderOneIconProps): react_jsx_runtime.JSX.Element;
 
 declare function AbacusIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
