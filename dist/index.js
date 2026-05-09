@@ -4562,7 +4562,295 @@ function FileAddIcon({
     }
   );
 }
+function UndoTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C8.66873 3 5.76018 4.80989 4.20404 7.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M3 3V4.27816C3 6.47004 3 7.56599 3.70725 8.16512C4.4145 8.76425 5.49553 8.58408 7.6576 8.22373L9 8",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function RedoTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C15.3313 3 18.2398 4.80989 19.796 7.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M20.9991 3V4.27816C20.9991 6.47004 20.9991 7.56599 20.2918 8.16512C19.5846 8.76425 18.5036 8.58408 16.3415 8.22373L14.9991 8",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function SaveIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M15.8787 3H11C7.22876 3 5.34315 3 4.17157 4.17157C3 5.34315 3 7.22876 3 11V13C3 16.7712 3 18.6569 4.17157 19.8284C5.34315 21 7.22876 21 11 21H13C16.7712 21 18.6569 21 19.8284 19.8284C21 18.6569 21 16.7712 21 13V8.12132C21 7.66475 21 7.43646 20.9758 7.2174C20.8924 6.4633 20.5963 5.74846 20.122 5.15629C19.9843 4.98427 19.8228 4.82285 19.5 4.5C19.1772 4.17715 19.0157 4.01573 18.8437 3.87795C18.2515 3.40366 17.5367 3.10757 16.7826 3.02421C16.5635 3 16.3353 3 15.8787 3Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M17 3.5V4C17 5.88562 17 6.82843 16.4142 7.41421C15.8284 8 14.8856 8 13 8H11C9.11438 8 8.17157 8 7.58579 7.41421C7 6.82843 7 5.88562 7 4V3.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M17 20.5V17C17 15.1144 17 14.1716 16.4142 13.5858C15.8284 13 14.8856 13 13 13H11C9.11438 13 8.17157 13 7.58579 13.5858C7 14.1716 7 15.1144 7 17V20.5",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function CheckmarkCircleTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z",
+            stroke: color,
+            strokeWidth: "1.5"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M8 12.5L10.5 15L16 9",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function AlertCircleIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "circle",
+          {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12 8V12",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12.125 15.75H12M12.25 15.75C12.25 15.8881 12.1381 16 12 16C11.8619 16 11.75 15.8881 11.75 15.75C11.75 15.6119 11.8619 15.5 12 15.5C12.1381 15.5 12.25 15.6119 12.25 15.75Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
+function AlertTwoIcon({
+  size = 24,
+  color = "currentColor",
+  animated: _animated,
+  triggered: _triggered,
+  onClick,
+  ...props
+}) {
+  return /* @__PURE__ */ jsxs(
+    motion.svg,
+    {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: "none",
+      onClick,
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M13.9248 21H10.0752C5.44476 21 3.12955 21 2.27636 19.4939C1.42317 17.9879 2.60736 15.9914 4.97574 11.9985L6.90057 8.75333C9.17559 4.91778 10.3131 3 12 3C13.6869 3 14.8244 4.91777 17.0994 8.75332L19.0243 11.9985C21.3926 15.9914 22.5768 17.9879 21.7236 19.4939C20.8704 21 18.5552 21 13.9248 21Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12 9V13",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        ),
+        /* @__PURE__ */ jsx(
+          "path",
+          {
+            d: "M12.125 16.75H12M12.25 16.75C12.25 16.8881 12.1381 17 12 17C11.8619 17 11.75 16.8881 11.75 16.75C11.75 16.6119 11.8619 16.5 12 16.5C12.1381 16.5 12.25 16.6119 12.25 16.75Z",
+            stroke: color,
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          }
+        )
+      ]
+    }
+  );
+}
 
-export { AbacusIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CircleIcon, CopyOneIcon, CursorCircleSelectionTwoIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FileAddIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, LaurelWreathOneIcon, LinkSixIcon, LoadingOneIcon, LogoIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PenOneIcon, PinIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, SearchOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UnfoldLessIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
+export { AbacusIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AlertCircleIcon, AlertTwoIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CheckmarkCircleTwoIcon, CircleIcon, CopyOneIcon, CursorCircleSelectionTwoIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FileAddIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, LaurelWreathOneIcon, LinkSixIcon, LoadingOneIcon, LogoIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PenOneIcon, PinIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, RedoTwoIcon, SaveIcon, SearchOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UndoTwoIcon, UnfoldLessIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map
