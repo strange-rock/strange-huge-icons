@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import * as LobehubIcons from "@lobehub/icons/es/icons";
 import toc from "@lobehub/icons/es/toc";
+import { LlmPreviewModal } from "./LlmPreviewModal";
 
 interface TocEntry {
   id: string;
@@ -35,6 +36,7 @@ export function LlmGrid({ search, size }: LlmGridProps) {
   const [group, setGroup] = useState<GroupFilter>("all");
   const [variant, setVariant] = useState<Variant>("color");
   const [hovered, setHovered] = useState<string | null>(null);
+  const [selected, setSelected] = useState<TocEntry | null>(null);
 
   const entries = useMemo(() => {
     const q = search.toLowerCase().trim();
@@ -96,6 +98,7 @@ export function LlmGrid({ search, size }: LlmGridProps) {
                 }}
                 onMouseEnter={() => setHovered(entry.id)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => setSelected(entry)}
               >
                 <IconComponent size={size} {...(isAvatar ? { shape: "square" } : {})} />
                 <span style={s.label}>{entry.fullTitle}</span>
@@ -103,6 +106,14 @@ export function LlmGrid({ search, size }: LlmGridProps) {
             );
           })}
         </div>
+      )}
+
+      {selected && (
+        <LlmPreviewModal
+          entry={selected}
+          Icon={(LobehubIcons as Record<string, any>)[selected.id]}
+          onClose={() => setSelected(null)}
+        />
       )}
     </div>
   );
