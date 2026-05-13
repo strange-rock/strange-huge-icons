@@ -105,3 +105,6 @@ export { AtomTwoIcon } from "./AtomTwoIcon";
 export { LinkBackwardIcon } from "./LinkBackwardIcon";
 export { PlayListIcon } from "./PlayListIcon";
 export { FileTwoIcon } from "./FileTwoIcon";
+export { SettingsOneIcon } from "./SettingsOneIcon";
+export { UnlinkOneIcon } from "./UnlinkOneIcon";
+export { AiIdeaIcon } from "./AiIdeaIcon";
