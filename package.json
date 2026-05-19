@@ -16,6 +16,11 @@
       "types": "./dist/llm/index.d.ts",
       "import": "./dist/llm/index.js",
       "require": "./dist/llm/index.cjs"
+    },
+    "./connectors": {
+      "types": "./dist/connectors/index.d.ts",
+      "import": "./dist/connectors/index.js",
+      "require": "./dist/connectors/index.cjs"
     }
   },
   "files": [
