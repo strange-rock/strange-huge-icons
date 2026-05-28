@@ -254,4 +254,34 @@ declare function UnlinkOneIcon({ size, color, animated: _animated, triggered: _t
 
 declare function AiIdeaIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, AiIdeaIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AlertCircleIcon, AlertTwoIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowExpandOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowShrinkTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AtomTwoIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CheckmarkCircleTwoIcon, CircleIcon, CopyOneIcon, CursorCircleSelectionTwoIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FileAddIcon, FileTwoIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, LaurelWreathOneIcon, LinkBackwardIcon, LinkSixIcon, LoadingOneIcon, LogoIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, NeuralNetworkIcon, PenOneIcon, PinIcon, PlayListIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, RedoTwoIcon, SaveIcon, SearchOneIcon, SettingsOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UndoTwoIcon, UnfoldLessIcon, UnlinkOneIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
+declare function AnalysisTextLinkIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function AnalyticsOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function BriefcaseEightIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function ContentWritingIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function CourtHouseIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function CustomerServiceOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function GoldSellIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function InspectCodeIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function LoginOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function MentoringIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function MortarboardOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function OfficeChairIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function SearchVisualIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function StudentCardIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+declare function TargetTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+
+export { AbacusIcon, AiIdeaIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AlertCircleIcon, AlertTwoIcon, AnalysisTextLinkIcon, AnalyticsOneIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowExpandOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowShrinkTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AtomTwoIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BriefcaseEightIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CheckmarkCircleTwoIcon, CircleIcon, ContentWritingIcon, CopyOneIcon, CourtHouseIcon, CursorCircleSelectionTwoIcon, CustomerServiceOneIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FileAddIcon, FileTwoIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, GoldSellIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, InspectCodeIcon, LaurelWreathOneIcon, LinkBackwardIcon, LinkSixIcon, LoadingOneIcon, LoginOneIcon, LogoIcon, MentoringIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, MortarboardOneIcon, NeuralNetworkIcon, OfficeChairIcon, PenOneIcon, PinIcon, PlayListIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, RedoTwoIcon, SaveIcon, SearchOneIcon, SearchVisualIcon, SettingsOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, StudentCardIcon, TargetTwoIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UndoTwoIcon, UnfoldLessIcon, UnlinkOneIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
