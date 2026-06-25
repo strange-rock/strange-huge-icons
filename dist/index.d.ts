@@ -1,7 +1,8 @@
 import { SVGMotionProps } from 'framer-motion';
 import * as react_jsx_runtime from 'react/jsx-runtime';
+import React from 'react';
 
-interface IconProps extends SVGMotionProps<SVGSVGElement> {
+interface IconProps$2 extends SVGMotionProps<SVGSVGElement> {
     /** Icon size in px. Defaults to the value defined in Figma. */
     size?: number;
     /** Stroke/fill color. Defaults to currentColor (inherits from CSS). */
@@ -14,11 +15,11 @@ interface IconProps extends SVGMotionProps<SVGSVGElement> {
     triggered?: boolean;
 }
 
-declare function BubbleChatAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BubbleChatAddIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BubbleChatIcon({ size, color, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BubbleChatIcon({ size, color, triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-interface SidebarLeftIconProps extends IconProps {
+interface SidebarLeftIconProps extends IconProps$2 {
     /** Controls the hover animation style.
      *  "close" → sidebar content slides out left, signalling the panel will close.
      *  "open"  → sidebar content slides in from left, signalling the panel will open. */
@@ -26,7 +27,7 @@ interface SidebarLeftIconProps extends IconProps {
 }
 declare function SidebarLeftIcon({ size, color, animated, triggered, variant, ...props }: SidebarLeftIconProps): react_jsx_runtime.JSX.Element;
 
-interface SidebarRightIconProps extends IconProps {
+interface SidebarRightIconProps extends IconProps$2 {
     /** Controls the hover animation style.
      *  "close" → sidebar content slides out right, signalling the panel will close.
      *  "open"  → sidebar content slides in from right, signalling the panel will open. */
@@ -34,254 +35,300 @@ interface SidebarRightIconProps extends IconProps {
 }
 declare function SidebarRightIcon({ size, color, animated, triggered, variant, ...props }: SidebarRightIconProps): react_jsx_runtime.JSX.Element;
 
-declare function PinIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function PinIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function PlusSignIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function PlusSignIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ImageTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ImageTwoIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ImageDownloadTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ImageDownloadTwoIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ImageNotFoundOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ImageNotFoundOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ImageAddTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ImageAddTwoIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AtomOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AtomOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowDownOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowDownOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LogoIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LogoIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UserIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UserIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UserAiIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UserAiIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ChatOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ChatOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function NeuralNetworkIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function NeuralNetworkIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SearchOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SearchOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MoreHorizontalIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MoreHorizontalIcon({ size, color, animated: _animated, triggered: _triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MoreVerticalIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MoreVerticalIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FolderAddIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FolderAddIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-interface FolderOneIconProps extends IconProps {
+interface FolderOneIconProps extends IconProps$2 {
     variant?: "closed" | "open" | "static";
 }
 declare function FolderOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, variant, ...props }: FolderOneIconProps): react_jsx_runtime.JSX.Element;
 
-declare function AbacusIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AbacusIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MicTwoIcon({ size, color, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MicTwoIcon({ size, color, triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AudioWaveOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AudioWaveOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function StopCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function StopCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowUpTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowUpTwoIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CancelOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CancelOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CancelCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CancelCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowRightOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowRightOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowLeftOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowLeftOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function GalaxyIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function GalaxyIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FolderThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FolderThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BubbleChatEditIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BubbleChatEditIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TextIndentIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TextIndentIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FilterMailIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FilterMailIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ViewOffSlashIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ViewOffSlashIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SourceCodeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SourceCodeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TestTubeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TestTubeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BrushIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BrushIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CalendarThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CalendarThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function StickyNoteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function StickyNoteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function QuillWriteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function QuillWriteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function QuillWriteOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function QuillWriteOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function WorkflowSquareTenIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function WorkflowSquareTenIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function DownloadOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function DownloadOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CursorCircleSelectionTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CursorCircleSelectionTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LoadingOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LoadingOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BookmarkTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BookmarkTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BookmarkTwoSolidIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BookmarkTwoSolidIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ExchangeOneIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ExchangeOneIcon({ size, color, animated, triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function StarIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function StarIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TextIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TextIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SourceCodeSquareIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SourceCodeSquareIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AiVisionRecognitionIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AiVisionRecognitionIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function GlobalSearchIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function GlobalSearchIcon({ size, color, animated: _a, triggered: _t, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-interface ViewIconProps extends IconProps {
+interface ViewIconProps extends IconProps$2 {
     variant?: "visible" | "hidden";
 }
 declare function ViewIcon({ size, color, animated: _animated, triggered: _triggered, variant, onClick, ...props }: ViewIconProps): react_jsx_runtime.JSX.Element;
 
-declare function ShareOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ShareOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BubbleChatTemporaryIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BubbleChatTemporaryIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CopyOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CopyOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function RedoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function RedoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ThumbsUpIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ThumbsUpIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ThumbsDownIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ThumbsDownIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TokenCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TokenCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TokenSquareIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TokenSquareIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LaurelWreathOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LaurelWreathOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BrainTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BrainTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AiWebBrowsingIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AiWebBrowsingIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CalendarFoldIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CalendarFoldIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AiViewIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AiViewIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AuditTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AuditTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AuctionIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AuctionIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AnonymousIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AnonymousIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function RadarThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function RadarThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FolderLibraryIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FolderLibraryIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function DownloadThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function DownloadThreeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowUpDownIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowUpDownIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function InputShortTextIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function InputShortTextIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MessagePreviewOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MessagePreviewOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UnfoldLessIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UnfoldLessIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ShapesOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ShapesOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function DashboardSquareOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function DashboardSquareOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function DragDropVerticalIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function DragDropVerticalIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TickTwoIcon({ size, color, animated, triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function TickTwoIcon({ size, color, animated, triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowRightTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowRightTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function PenOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function PenOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function InformationCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function InformationCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LinkSixIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LinkSixIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowUpRightOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowUpRightOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function DeleteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function DeleteTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ExpandIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ExpandIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowDownTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowDownTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function VerticalScrollPointIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function VerticalScrollPointIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UserAddOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UserAddOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FileAddIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FileAddIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UndoTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UndoTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function RedoTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function RedoTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SaveIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SaveIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CheckmarkCircleTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CheckmarkCircleTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AlertCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AlertCircleIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AlertTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AlertTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowExpandOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowExpandOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ArrowShrinkTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ArrowShrinkTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AtomTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AtomTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LinkBackwardIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LinkBackwardIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function PlayListIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function PlayListIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function FileTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FileTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SettingsOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function SettingsOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function UnlinkOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function UnlinkOneIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AiIdeaIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AiIdeaIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AnalysisTextLinkIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AnalysisTextLinkIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function AnalyticsOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function AnalyticsOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function BriefcaseEightIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function BriefcaseEightIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function ContentWritingIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ContentWritingIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CourtHouseIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function ClubsTwoIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function CustomerServiceOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CourtHouseIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function GoldSellIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function Crown03Icon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function InspectCodeIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function FavouriteIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function LoginOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function CustomerServiceOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MentoringIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function GoldSellIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function MortarboardOneIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function InspectCodeIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function OfficeChairIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function LoginOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function SearchVisualIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MentoringIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function StudentCardIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function MortarboardOneIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-declare function TargetTwoIcon({ size, color, animated, triggered, ...props }: IconProps): react_jsx_runtime.JSX.Element;
+declare function OfficeChairIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
 
-export { AbacusIcon, AiIdeaIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AlertCircleIcon, AlertTwoIcon, AnalysisTextLinkIcon, AnalyticsOneIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowExpandOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowShrinkTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AtomTwoIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BriefcaseEightIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CheckmarkCircleTwoIcon, CircleIcon, ContentWritingIcon, CopyOneIcon, CourtHouseIcon, CursorCircleSelectionTwoIcon, CustomerServiceOneIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FileAddIcon, FileTwoIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, GoldSellIcon, type IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, InspectCodeIcon, LaurelWreathOneIcon, LinkBackwardIcon, LinkSixIcon, LoadingOneIcon, LoginOneIcon, LogoIcon, MentoringIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, MortarboardOneIcon, NeuralNetworkIcon, OfficeChairIcon, PenOneIcon, PinIcon, PlayListIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, RedoTwoIcon, SaveIcon, SearchOneIcon, SearchVisualIcon, SettingsOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SourceCodeIcon, SourceCodeSquareIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, StudentCardIcon, TargetTwoIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UndoTwoIcon, UnfoldLessIcon, UnlinkOneIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
+declare function SearchVisualIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function StudentCardIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function TargetTwoIcon({ size, color, animated, triggered, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function ChessKingIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function ChessBishopIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function ChessRookIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function ChessKnightIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function HexagonIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SpadeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function ClubsShapeIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SolarBlobIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SolarRingIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SolarCometIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SolarOrganicIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+declare function SolarSystemIcon({ size, color, animated: _animated, triggered: _triggered, onClick, ...props }: IconProps$2): react_jsx_runtime.JSX.Element;
+
+interface IconProps$1 {
+    size?: number;
+    color?: string;
+    style?: React.CSSProperties;
+    className?: string;
+}
+declare const ManageTeamsIcon: React.FC<IconProps$1>;
+
+interface IconProps {
+    size?: number;
+    color?: string;
+    style?: React.CSSProperties;
+    className?: string;
+}
+declare const PersonalProjectsIcon: React.FC<IconProps>;
+
+export { AbacusIcon, AiIdeaIcon, AiViewIcon, AiVisionRecognitionIcon, AiWebBrowsingIcon, AlertCircleIcon, AlertTwoIcon, AnalysisTextLinkIcon, AnalyticsOneIcon, AnonymousIcon, ArrowDownOneIcon, ArrowDownTwoIcon, ArrowExpandOneIcon, ArrowLeftOneIcon, ArrowRightOneIcon, ArrowRightTwoIcon, ArrowShrinkTwoIcon, ArrowUpDownIcon, ArrowUpRightOneIcon, ArrowUpTwoIcon, AtomOneIcon, AtomTwoIcon, AuctionIcon, AudioWaveOneIcon, AuditTwoIcon, BookmarkTwoIcon, BookmarkTwoSolidIcon, BrainTwoIcon, BriefcaseEightIcon, BrushIcon, BubbleChatAddIcon, BubbleChatEditIcon, BubbleChatIcon, BubbleChatTemporaryIcon, CalendarFoldIcon, CalendarThreeIcon, CancelCircleIcon, CancelOneIcon, ChatOneIcon, CheckmarkCircleTwoIcon, ChessBishopIcon, ChessKingIcon, ChessKnightIcon, ChessRookIcon, CircleIcon, ClubsShapeIcon, ClubsTwoIcon, ContentWritingIcon, CopyOneIcon, CourtHouseIcon, Crown03Icon, CursorCircleSelectionTwoIcon, CustomerServiceOneIcon, DashboardSquareOneIcon, DeleteTwoIcon, DownloadOneIcon, DownloadThreeIcon, DragDropVerticalIcon, ExchangeOneIcon, ExpandIcon, FavouriteIcon, FileAddIcon, FileTwoIcon, FilterMailIcon, FolderAddIcon, FolderLibraryIcon, FolderOneIcon, FolderThreeIcon, GalaxyIcon, GlobalSearchIcon, GoldSellIcon, HexagonIcon, type IconProps$2 as IconProps, ImageAddTwoIcon, ImageDownloadTwoIcon, ImageNotFoundOneIcon, ImageTwoIcon, InformationCircleIcon, InputShortTextIcon, InspectCodeIcon, LaurelWreathOneIcon, LinkBackwardIcon, LinkSixIcon, LoadingOneIcon, LoginOneIcon, LogoIcon, ManageTeamsIcon, MentoringIcon, MessagePreviewOneIcon, MicTwoIcon, MoreHorizontalIcon, MoreVerticalIcon, MortarboardOneIcon, NeuralNetworkIcon, OfficeChairIcon, PenOneIcon, PersonalProjectsIcon, PinIcon, PlayListIcon, PlusSignIcon, QuillWriteOneIcon, QuillWriteTwoIcon, RadarThreeIcon, RedoIcon, RedoTwoIcon, SaveIcon, SearchOneIcon, SearchVisualIcon, SettingsOneIcon, ShapesOneIcon, ShareOneIcon, SidebarLeftIcon, SidebarRightIcon, SolarBlobIcon, SolarCometIcon, SolarOrganicIcon, SolarRingIcon, SolarSystemIcon, SourceCodeIcon, SourceCodeSquareIcon, SpadeIcon, StarIcon, StickyNoteTwoIcon, StopCircleIcon, StudentCardIcon, TargetTwoIcon, TestTubeIcon, TextIcon, TextIndentIcon, ThumbsDownIcon, ThumbsUpIcon, TickTwoIcon, TokenCircleIcon, TokenSquareIcon, UndoTwoIcon, UnfoldLessIcon, UnlinkOneIcon, UserAddOneIcon, UserAiIcon, UserIcon, VerticalScrollPointIcon, ViewIcon, ViewOffSlashIcon, WorkflowSquareTenIcon };
