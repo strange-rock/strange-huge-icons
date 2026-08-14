@@ -7,3 +7,7 @@ node_modules/
 llm-icons/
 llm-icons-mono/
 llm-icons-avatar/
+
+# Scratch dirs used by scripts/extract-hugeicons.mjs and verify-icon-parity.mjs
+.tmp-extract/
+.tmp-verify/
