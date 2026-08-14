@@ -20,13 +20,6 @@ const OPEN_FG =
 
 const T = { duration: 0.28, ease: [0.4, 0, 0.2, 1] as const };
 
-const pathProps = {
-  fill: "#F7F2ED" as const,
-  stroke: "#524B47" as const,
-  strokeWidth: 1.5,
-  strokeLinecap: "round" as const,
-};
-
 export function FolderOneIcon({
   size = 24,
   color = "currentColor",
@@ -38,6 +31,16 @@ export function FolderOneIcon({
 }: FolderOneIconProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
+
+  // Both paint channels follow `color`, so the icon themes off CSS like every
+  // other icon in the set. Colored folder treatments are a product-level
+  // override, not baked in here.
+  const pathProps = {
+    fill: color,
+    stroke: color,
+    strokeWidth: 1.5,
+    strokeLinecap: "round" as const,
+  };
 
   if (variant === "static") {
     return (
