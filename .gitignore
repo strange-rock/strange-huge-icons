@@ -11,3 +11,6 @@ llm-icons-avatar/
 # Scratch dirs used by scripts/extract-hugeicons.mjs and verify-icon-parity.mjs
 .tmp-extract/
 .tmp-verify/
+
+# Figma token for scripts/verify-icon-figma-parity.mjs
+.env

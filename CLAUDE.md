@@ -180,10 +180,23 @@ work with any library's paths. Icons that animate individual elements — the si
 staggered slide, the chat bubble's dot reveal — stay as hand-built components listed in
 `CUSTOM_COMPONENTS`; `<Icon>` delegates to those when `animated`/`triggered` is set.
 
-Six icons can't be expressed as flat path data at all (clip paths, groups, fixed
-palettes): `image`, `logo`, `sidebar-left`, `sidebar-right`, `eye`, `folder`. `<Icon>`
-always renders their component. The extractor reports this list when it runs — if it
-grows, that's expected, not a bug.
+Five icons can't be expressed as flat path data at all (clip paths, groups, fixed
+palettes): `image`, `logo`, `sidebar-left`, `sidebar-right`, `eye`. `<Icon>` always
+renders their component. The extractor reports this list when it runs — if it grows,
+that's expected, not a bug.
+
+### Staying in sync with Figma
+
+`node scripts/verify-icon-figma-parity.mjs --file <fileKey>` reads the Figma icons page
+and diffs its component names against the registry, in both directions. Exit codes: `0`
+in sync, `1` drift, `2` couldn't run (no token, bad file key, no icons page).
+
+It needs `FIGMA_TOKEN` — put it in `.env` (gitignored), along with
+`FIGMA_ICONS_FILE_KEY` so the flag can be omitted. Figma names carry a `#` suffix and
+the code names are PascalCase; the script derives one from the other
+(`ArrowDownOneIcon` → `arrow-down-01#`) and keeps a `FIGMA_NAME_OVERRIDES` map for the
+icons that don't follow the pattern — custom artwork like `logo` and `solar-*` is
+mapped to `null`, meaning "not expected on the page".
 
 ---
 
