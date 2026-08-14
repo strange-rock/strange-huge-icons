@@ -102,8 +102,11 @@ Rules:
 2. **Find the SVG** at `/tmp/hugeicons-svg/svg/stroke-rounded/copy-01.svg`
 3. **Create the TSX file** at `src/icons/CopyOneIcon.tsx` following the pattern above
 4. **Export it** in `src/icons/index.ts`
-5. **Build**: `npm run build`
-6. **Verify** the paths match the source SVG exactly (see verification section below)
+5. **Register a canonical name** in `src/registry.ts` (`copy: "CopyOneIcon"`)
+6. **Regenerate path data**: `node scripts/extract-hugeicons.mjs`
+7. **Build**: `npm run build`
+8. **Verify** the paths match the source SVG exactly (see verification section below), then
+   `node scripts/verify-icon-parity.mjs`
 
 ---
 
@@ -128,10 +131,72 @@ Known past mistakes that were caught and fixed:
 
 ---
 
+## The `<Icon>` API — canonical names
+
+Alongside the named exports there's a library-agnostic API: app code asks for a
+*concept* (`search`), not a HugeIcons component (`SearchOneIcon`). That's what lets
+us swap icon libraries or styles later without touching call sites. Full design
+rationale lives in `ICON-ARCHITECTURE.md`.
+
+```tsx
+import { Icon, IconProvider } from "@strange-huge/icons";
+
+// App root — picks the active library + style for everything below it
+<IconProvider library="hugeicons" style="stroke">
+  <App />
+</IconProvider>
+
+<Icon name="search" size={20} />
+<Icon name="settings" size={24} animated />
+<Icon name="chat" size={16} color="var(--icon-default)" />
+```
+
+Both APIs render identical SVG — `<Icon name="search" />` and `<SearchOneIcon />`
+are the same pixels. The named exports are not going away; migrate gradually.
+
+### How it fits together
+
+| File | Role |
+| --- | --- |
+| `src/registry.ts` | canonical name → component name, `IconName` union, `ICON_NAMES` |
+| `src/libraries/hugeicons/stroke.ts` | **generated** path data keyed by canonical name |
+| `src/libraries/types.ts` | `PathData` / `IconData` — the data format every adapter emits |
+| `src/resolver.ts` | picks the path set for the active library + style, with fallbacks |
+| `src/IconProvider.tsx` | React context holding `{ library, style }` |
+| `src/Icon.tsx` | renders path data, or delegates to a custom component |
+| `src/animations/index.ts` | per-canonical-name animation defs + custom component map |
+
+### Generated path data — don't hand-edit
+
+`src/libraries/hugeicons/stroke.ts` is produced by `node scripts/extract-hugeicons.mjs`,
+which server-renders every component in `src/icons/` and reads the geometry back out.
+Edit the component, then regenerate. `node scripts/verify-icon-parity.mjs` renders both
+APIs and fails if any icon differs — run it after touching icons, the registry, or `Icon.tsx`.
+
+### Animations stay library-agnostic
+
+Whole-icon transforms (scale bounce, nudge, spin) live as data in `ANIMATIONS`, so they
+work with any library's paths. Icons that animate individual elements — the sidebar's
+staggered slide, the chat bubble's dot reveal — stay as hand-built components listed in
+`CUSTOM_COMPONENTS`; `<Icon>` delegates to those when `animated`/`triggered` is set.
+
+Six icons can't be expressed as flat path data at all (clip paths, groups, fixed
+palettes): `image`, `logo`, `sidebar-left`, `sidebar-right`, `eye`, `folder`. `<Icon>`
+always renders their component. The extractor reports this list when it runs — if it
+grows, that's expected, not a bug.
+
+---
+
 ## Project structure
 
 ```
 src/
+  Icon.tsx       # Universal <Icon name="…" /> component
+  IconProvider.tsx
+  registry.ts    # Canonical names
+  resolver.ts    # Library + style lookup
+  animations/    # Animation defs + custom component map
+  libraries/     # Path data adapters (hugeicons today, pika/nucleo later)
   icons/         # One TSX file per icon
   index.ts       # Re-exports everything from src/icons/
   types.ts       # IconProps interface
