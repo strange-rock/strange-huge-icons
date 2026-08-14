@@ -11,6 +11,9 @@ const STAND =
 export function MicTwoIcon({
   size = 24,
   color = "currentColor",
+  // This icon always animates on hover — accepted and ignored so it never
+  // reaches the DOM as an unknown attribute.
+  animated: _animated,
   triggered,
   onClick,
   ...props

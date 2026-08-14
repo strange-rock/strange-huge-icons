@@ -15,6 +15,9 @@ const T_OUT = { duration: 0.15, ease: "easeIn"  as const };
 export function BubbleChatIcon({
   size = 24,
   color = "currentColor",
+  // This icon always animates on hover — accepted and ignored so it never
+  // reaches the DOM as an unknown attribute.
+  animated: _animated,
   triggered,
   onClick,
   ...props
