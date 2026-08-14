@@ -1,6 +1,13 @@
 import { useState, useMemo } from "react";
 import * as Icons from "@strange-huge/icons";
-import type { IconProps } from "@strange-huge/icons";
+import {
+  Icon,
+  IconProvider,
+  ICON_NAMES,
+  availableLibraries,
+  availableStyles,
+} from "@strange-huge/icons";
+import type { IconProps, IconLibrary, IconStyle } from "@strange-huge/icons";
 import { IconCard } from "./components/IconCard";
 import { LlmGrid } from "./components/LlmGrid";
 import { PreviewModal } from "./components/PreviewModal";
@@ -9,10 +16,21 @@ import { LLM_ICONS } from "./lib/iconMeta";
 
 type IconComponent = React.ComponentType<IconProps>;
 type Tab = "all" | "llm";
+/** "legacy" → <SearchOneIcon />, "registry" → <Icon name="search" /> */
+type ApiMode = "legacy" | "registry";
 
+// Icon components are the PascalCase `*Icon` exports — skips helpers like
+// `resolveIcon` and the universal `Icon` itself.
 const allIcons = Object.entries(Icons).filter(
-  ([, v]) => typeof v === "function"
+  ([name, v]) =>
+    typeof v === "function" && name.endsWith("Icon") && name !== "Icon" && /^[A-Z]/.test(name)
 ) as [string, IconComponent][];
+
+/** Same grid, drawn through the canonical registry instead of named exports. */
+const registryIcons = ICON_NAMES.map((name) => [
+  name,
+  (props: IconProps) => <Icon {...props} name={name} />,
+]) as [string, IconComponent][];
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -20,15 +38,19 @@ export default function App() {
   const [activeSize, setActiveSize] = useState(24);
   const [selected, setSelected] = useState<[string, IconComponent] | null>(null);
   const [activeTab, setActiveTab] = useState<Tab>("all");
+  const [apiMode, setApiMode] = useState<ApiMode>("legacy");
+  const [library, setLibrary] = useState<IconLibrary>("hugeicons");
+  const [style, setStyle] = useState<IconStyle>("stroke");
 
   const filtered = useMemo(() => {
+    const source = apiMode === "registry" ? registryIcons : allIcons;
     const base = activeTab === "llm"
-      ? allIcons.filter(([name]) => LLM_ICONS.includes(name))
-      : allIcons;
+      ? source.filter(([name]) => LLM_ICONS.includes(name))
+      : source;
     const q = search.toLowerCase().trim();
     if (!q) return base;
     return base.filter(([name]) => name.toLowerCase().includes(q));
-  }, [search, activeTab]);
+  }, [search, activeTab, apiMode]);
 
   return (
     <div style={s.root}>
@@ -104,6 +126,60 @@ export default function App() {
             />
             <span style={s.sizeValue}>{activeSize}px</span>
           </label>
+
+          <div style={s.controlDivider} />
+
+          <div style={s.controlItem}>
+            <span style={s.controlLabel}>API</span>
+            <div style={s.segmented}>
+              {(["legacy", "registry"] as ApiMode[]).map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setApiMode(mode)}
+                  style={{ ...s.segment, ...(apiMode === mode ? s.segmentActive : {}) }}
+                  title={
+                    mode === "legacy"
+                      ? "<SearchOneIcon size={24} />"
+                      : '<Icon name="search" size={24} />'
+                  }
+                >
+                  {mode === "legacy" ? "Named" : "Registry"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {apiMode === "registry" && (
+            <>
+              <div style={s.controlDivider} />
+
+              <label style={s.controlItem}>
+                <span style={s.controlLabel}>Library</span>
+                <select
+                  value={library}
+                  onChange={(e) => setLibrary(e.target.value as IconLibrary)}
+                  style={s.select}
+                >
+                  {availableLibraries().map((lib) => (
+                    <option key={lib} value={lib}>{lib}</option>
+                  ))}
+                </select>
+              </label>
+
+              <label style={s.controlItem}>
+                <span style={s.controlLabel}>Style</span>
+                <select
+                  value={style}
+                  onChange={(e) => setStyle(e.target.value as IconStyle)}
+                  style={s.select}
+                >
+                  {availableStyles(library).map((st) => (
+                    <option key={st} value={st}>{st}</option>
+                  ))}
+                </select>
+              </label>
+            </>
+          )}
         </div>
       </div>
 
@@ -116,7 +192,9 @@ export default function App() {
             <span style={s.gridLabel}>
               {search
                 ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${search}"`
-                : `All icons · ${allIcons.length}`}
+                : apiMode === "registry"
+                  ? `Canonical names · ${registryIcons.length} · ${library}/${style}`
+                  : `All icons · ${allIcons.length}`}
             </span>
           </div>
 
@@ -124,30 +202,34 @@ export default function App() {
           {filtered.length === 0 ? (
             <div style={s.empty}>No icons match "{search}"</div>
           ) : (
-            <div style={s.grid}>
-              {filtered.map(([name, Component]) => (
-                <IconCard
-                  key={name}
-                  name={name}
-                  Component={Component}
-                  color={activeColor}
-                  size={activeSize}
-                  onSelect={() => setSelected([name, Component])}
-                />
-              ))}
-            </div>
+            <IconProvider library={library} style={style}>
+              <div style={s.grid}>
+                {filtered.map(([name, Component]) => (
+                  <IconCard
+                    key={name}
+                    name={name}
+                    Component={Component}
+                    color={activeColor}
+                    size={activeSize}
+                    onSelect={() => setSelected([name, Component])}
+                  />
+                ))}
+              </div>
+            </IconProvider>
           )}
         </>
       )}
 
       {/* ── Preview modal ── */}
       {selected && (
-        <PreviewModal
-          name={selected[0]}
-          Component={selected[1]}
-          color={activeColor}
-          onClose={() => setSelected(null)}
-        />
+        <IconProvider library={library} style={style}>
+          <PreviewModal
+            name={selected[0]}
+            Component={selected[1]}
+            color={activeColor}
+            onClose={() => setSelected(null)}
+          />
+        </IconProvider>
       )}
     </div>
   );
@@ -282,6 +364,37 @@ const s: Record<string, React.CSSProperties> = {
     width: 1,
     height: 16,
     background: "#1f1f1f",
+  },
+  segmented: {
+    display: "flex",
+    padding: 2,
+    gap: 2,
+    borderRadius: 6,
+    background: "#111",
+    border: "1px solid #1f1f1f",
+  },
+  segment: {
+    padding: "3px 10px",
+    fontSize: 11,
+    fontWeight: 500,
+    color: "#555",
+    background: "none",
+    border: "none",
+    borderRadius: 4,
+    cursor: "pointer",
+  },
+  segmentActive: {
+    color: "#fff",
+    background: "#222",
+  },
+  select: {
+    padding: "3px 6px",
+    fontSize: 11,
+    color: "#ccc",
+    background: "#111",
+    border: "1px solid #1f1f1f",
+    borderRadius: 5,
+    cursor: "pointer",
   },
   colorInput: {
     width: 24,
